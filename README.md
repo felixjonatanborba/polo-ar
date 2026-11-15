@@ -1,5 +1,7 @@
 # Polo AR
 
+Web publicada en **https://polo-ar.com** (también https://polo-ar.pages.dev).
+
 Portal de polo argentino: resultados, detalle de partidos, en vivo y repeticiones en Disney+ de la Triple Corona (Hurlingham, Tortugas y Abierto Argentino de Palermo).
 
 Sitio estático: HTML, CSS y JavaScript sin frameworks ni dependencias. Los datos viven en `data/*.json` y se editan a mano.

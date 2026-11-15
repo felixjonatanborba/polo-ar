@@ -33,4 +33,5 @@ Datos hasta el 15/11/2026. Todo lo que figura acá se muestra en la página con 
 - [ ] ¿Datos en vivo reales? Hace falta una fuente autorizada (AAP o un proveedor). El enganche ya está en `functions/api/live.js`.
 - [ ] ¿Abrir el sitio dentro de la app de escritorio de Claude o como programa de Windows (`.exe`)? Quedó sin resolver en la sesión anterior.
 - [ ] ¿Actualizar el artifact viejo (https://claude.ai/artifact/U243tmzmPm6WYB4dUVAChX), que todavía tiene la versión con noticias?
-- [ ] **Anuncios:** comprar dominio propio, conectarlo en Cloudflare, crear cuenta de AdSense y completar `data/anuncios.json` y `ads.txt` (ver README).
+- [x] Dominio propio: **polo-ar.com** (y www.polo-ar.com), conectado en Cloudflare el 15/11/2026.
+- [ ] **Anuncios:** crear cuenta de AdSense con polo-ar.com y completar `data/anuncios.json` y `ads.txt` (ver README).
