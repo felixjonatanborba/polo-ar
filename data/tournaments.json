@@ -1,5 +1,5 @@
 {
-  "_ayuda": "Torneos de la Triple Corona (para la franja y los filtros) y próximos torneos de la AAP.",
+  "_ayuda": "Torneos de la Triple Corona (para la franja y los filtros) y próximos torneos de la AAP. 'foto' es la imagen de fondo de cada tarjeta (con su autor y licencia; el crédito es obligatorio).",
   "tripleCorona": [
     {
       "id": "hurlingham",
@@ -13,7 +13,14 @@
       "disney": null,
       "copa": "Ayrshire Cup",
       "inicio": "2026-09-22",
-      "finalProgramada": "2026-10-03"
+      "finalProgramada": "2026-10-03",
+      "foto": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Club_Hurlingham%2C_Argentina_03.jpg/960px-Club_Hurlingham%2C_Argentina_03.jpg",
+        "autor": "Roberto Fiadone",
+        "licencia": "CC BY 4.0",
+        "fuente": "https://commons.wikimedia.org/wiki/File:Club_Hurlingham,_Argentina_03.jpg",
+        "ilustrativa": false
+      }
     },
     {
       "id": "tortugas",
@@ -27,7 +34,14 @@
       "disney": null,
       "copa": "Copa Emilio de Anchorena",
       "inicio": "2026-10-06",
-      "finalProgramada": "2026-11-07"
+      "finalProgramada": "2026-11-07",
+      "foto": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Polo_in_Argentina.jpg",
+        "autor": "Σταύρος",
+        "licencia": "CC BY 2.0",
+        "fuente": "https://commons.wikimedia.org/wiki/File:Polo_in_Argentina.jpg",
+        "ilustrativa": true
+      }
     },
     {
       "id": "palermo",
@@ -55,7 +69,14 @@
       "disney": "https://www.disneyplus.com/es-419/browse/entity-d50ad327-bbc1-467f-b802-cee1852a9337",
       "copa": null,
       "inicio": "2026-11-10",
-      "finalProgramada": "2026-12-12"
+      "finalProgramada": "2026-12-12",
+      "foto": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Polo_in_Palermo.jpg/960px-Polo_in_Palermo.jpg",
+        "autor": "Beatrice Murch",
+        "licencia": "CC BY 2.0",
+        "fuente": "https://commons.wikimedia.org/wiki/File:Polo_in_Palermo.jpg",
+        "ilustrativa": false
+      }
     }
   ],
   "temporada": {

@@ -187,9 +187,15 @@
       var filas = "";
       if (t.campeon) filas += linea(t.campeon, "campeón") + linea(t.subcampeon, "subcampeón");
       (t.destacados || []).forEach(function (d) { filas += linea(d.equipo, d.texto); });
-      return '<article class="tc' + (on ? " on" : "") + '"><div class="n"><span>Triple Corona 2026 · ' + t.orden + "</span>" +
+      var ft = t.foto, estilo = "", cred = "";
+      if (ft && ft.url) {
+        estilo = ' style="--foto:url(&quot;' + esc(ft.url) + '&quot;)"';
+        cred = '<div class="cred">' + (ft.ilustrativa ? "Foto ilustrativa · " : "Foto: ") +
+          '<a href="' + esc(ft.fuente) + '" target="_blank" rel="noopener">' + esc(ft.autor) + "</a> · " + esc(ft.licencia) + "</div>";
+      }
+      return '<article class="tc' + (on ? " on" : "") + (ft ? " foto" : "") + '"' + estilo + '><div class="n"><span>Triple Corona 2026 · ' + t.orden + "</span>" +
         (on ? '<span class="badge">En juego</span>' : "") + "</div>" +
-        "<h3>" + esc(t.nombre) + "</h3>" + filas + '<div class="s">' + esc(t.resumen) + "</div></article>";
+        "<h3>" + esc(t.nombre) + "</h3>" + filas + '<div class="s">' + esc(t.resumen) + "</div>" + cred + "</article>";
     }).join("");
     function linea(id, txt) { return '<div class="l">' + escudo(id, true) + "<span>" + esc(eq(id).nombre) + " <small>" + esc(txt) + "</small></span></div>"; }
   }
