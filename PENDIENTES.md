@@ -4,7 +4,7 @@ Datos hasta el 15/11/2026. Todo lo que figura acá se muestra en la página con 
 
 ## Datos sin confirmar
 
-- [ ] **Palermo, domingo 15/11:** Las Monjitas vs. La Zeta Kazak. Cargar cuando salga el resultado.
+- [ ] Palermo, 15/11: faltan marcador por chukker y goleadores de Híper vs. La Aguada y Las Monjitas vs. La Zeta.
 - [ ] Fechas aproximadas: semifinal La Hache vs. Ellerstina de Hurlingham (26 o 27/9); Tortugas zona B del 1/11 (Las Monjitas vs. La Hache y La Irenita vs. La Aguada; puede ser 31/10).
 - [ ] Tortugas, La Hache vs. La Irenita (18/10): 18-12 según La Nación y Alternativa en Papel, 19-12 según Pololine. Figura 18-12.
 - [ ] Tortugas, La Zeta Kazak 14-11 La Ensenada (19/10): un solo medio lo confirma.

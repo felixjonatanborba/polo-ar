@@ -18,6 +18,22 @@
       "repeticion": null
     },
     {
+      "id": "pal-2026-f2-monjitas-zeta",
+      "torneo": "palermo",
+      "fecha": "2026-11-15",
+      "fechaAproximada": false,
+      "fase": "Zona B · Fecha 2",
+      "local": "las-monjitas",
+      "visitante": "la-zeta",
+      "golesLocal": 12,
+      "golesVisitante": 13,
+      "ganador": "visitante",
+      "progresion": [],
+      "goleadores": [],
+      "nota": "La Zeta Kazak, que llegó desde el clasificatorio, le ganó a Las Monjitas (35 de handicap) en su debut en Palermo. Las Monjitas jugó con Ignatius du Plessis en lugar de David Stirling.",
+      "repeticion": null
+    },
+    {
       "id": "pal-2026-f1-ensenada-irenita",
       "torneo": "palermo",
       "fecha": "2026-11-14",
