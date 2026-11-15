@@ -315,10 +315,12 @@
   function prepararAnuncios() {
     getJSON(DATOS + "anuncios.json").then(function (a) {
       if (!a || !a.activo || !/^ca-pub-\d{10,}$/.test(a.cliente || "") || /^ca-pub-0+$/.test(a.cliente)) return;
-      var sc = document.createElement("script");
-      sc.async = true; sc.crossOrigin = "anonymous";
-      sc.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=" + encodeURIComponent(a.cliente);
-      document.head.appendChild(sc);
+      if (!document.querySelector('script[src*="adsbygoogle.js"]')) {
+        var sc = document.createElement("script");
+        sc.async = true; sc.crossOrigin = "anonymous";
+        sc.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=" + encodeURIComponent(a.cliente);
+        document.head.appendChild(sc);
+      }
       document.querySelectorAll(".ad[data-espacio]").forEach(function (box) {
         var slot = (a.espacios || {})[box.getAttribute("data-espacio")];
         if (!slot) return;

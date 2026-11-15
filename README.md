@@ -143,9 +143,8 @@ Los espacios ya están en la página (arriba, al costado y abajo) y quedan ocult
 
 1. Conseguí un **dominio propio** y conectalo en Cloudflare Pages (Custom domains). AdSense no aprueba subdominios como `polo-ar.pages.dev`.
 2. Creá la cuenta en https://adsense.google.com y agregá el sitio con tu dominio.
-3. Para que Google verifique el sitio, en `data/anuncios.json` poné tu ID en `"cliente"` (empieza con `ca-pub-`) y `"activo": true`. Con `"espacios"` vacíos se carga solo el código de verificación, sin anuncios.
-4. Creá un archivo `ads.txt` en la raíz del proyecto con la línea que te da AdSense, por ejemplo:
-   `google.com, pub-1234567890123456, DIRECT, f08c47fec0942fa0`
+3. Ya hecho: el código de AdSense (ca-pub-2663033045906008) está en el `<head>` de `index.html` y `privacidad.html`, y `ads.txt` está en la raíz.
+4. Si algún día cambia el ID, actualizalo en esos tres archivos y en `data/anuncios.json`.
 5. Cuando AdSense apruebe el sitio, creá tres bloques de anuncios ("Display", adaptables) y poné sus números en `"arriba"`, `"lateral"` y `"abajo"`.
 
 La política de privacidad está en `privacidad.html` y enlazada en el pie de página.

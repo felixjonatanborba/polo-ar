@@ -34,4 +34,5 @@ Datos hasta el 15/11/2026. Todo lo que figura acá se muestra en la página con 
 - [ ] ¿Abrir el sitio dentro de la app de escritorio de Claude o como programa de Windows (`.exe`)? Quedó sin resolver en la sesión anterior.
 - [ ] ¿Actualizar el artifact viejo (https://claude.ai/artifact/U243tmzmPm6WYB4dUVAChX), que todavía tiene la versión con noticias?
 - [x] Dominio propio: **polo-ar.com** (y www.polo-ar.com), conectado en Cloudflare el 15/11/2026.
-- [ ] **Anuncios:** crear cuenta de AdSense con polo-ar.com y completar `data/anuncios.json` y `ads.txt` (ver README).
+- [x] Código de AdSense y `ads.txt` cargados (pub-2663033045906008).
+- [ ] **Anuncios:** esperar la aprobación de AdSense y cargar los números de los tres bloques en `data/anuncios.json`.
