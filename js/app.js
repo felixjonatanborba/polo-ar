@@ -285,6 +285,7 @@
     h += '<div class="acts">' +
       '<a class="btn t" href="' + esc((m && m.transmision) || links.disney || linkTorneoDisney("palermo")) + '" target="_blank" rel="noopener">▶ Ver en Disney+<span class="sr-only"> (se abre en otra pestaña)</span></a>' +
       (links.aap ? '<a class="btn" href="' + esc(links.aap) + '" target="_blank" rel="noopener">AAP Live<span class="sr-only"> (se abre en otra pestaña)</span></a>' : "") +
+      (links.youtube ? '<a class="btn yt" href="' + esc(links.youtube) + '" target="_blank" rel="noopener">▶ Resúmenes en YouTube<span class="sr-only"> (se abre en otra pestaña)</span></a>' : "") +
       "</div>";
     if (v.actualizado) h += '<p class="upd">Actualizado: ' + esc(hora(v.actualizado)) + " (hora argentina)</p>";
     $("vivo").innerHTML = h + "</div>";

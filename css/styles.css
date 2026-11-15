@@ -193,7 +193,9 @@ details[open] .chev { transform: rotate(180deg); }
   .tm .cr { width: 28px; height: 28px; }
   .sc { font-size: 18px; min-width: 62px; padding: 1px 6px; }
   .btn { flex-wrap: wrap; justify-content: center; text-align: center; }
-  .btn small { flex-basis: 100%; }
+  .btn.yt { border-color: #E5484D; color: #E5484D; }
+.btn.yt:hover { background: #E5484D; color: #FFFFFF; }
+.btn small { flex-basis: 100%; }
 }
 
 .acts { padding: 4px 16px 12px; display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
