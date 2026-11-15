@@ -1,6 +1,12 @@
 # Cabeceras para Cloudflare Pages
 /data/*
   Cache-Control: no-cache
+/js/*
+  Cache-Control: no-cache
+/css/*
+  Cache-Control: no-cache
+/*.html
+  Cache-Control: no-cache
 /assets/crests/*
   Cache-Control: public, max-age=604800
 /*
