@@ -149,6 +149,12 @@ Los espacios ya están en la página (arriba, al costado y abajo) y quedan ocult
 
 La política de privacidad está en `privacidad.html` y enlazada en el pie de página.
 
+## Si cambiás el diseño o el código
+
+En polo-ar.com, Cloudflare hace que los navegadores guarden `css/styles.css` y `js/app.js` por 4 horas. Para que se vea un cambio enseguida, subí el número `?v=...` que aparece después de esos archivos en `index.html` y `privacidad.html` (por ejemplo, la fecha y hora). Los datos de `data/` no tienen este problema: se actualizan al instante.
+
+Opcional: en Cloudflare → polo-ar.com → Caching → Configuration → **Browser Cache TTL** → "Respect Existing Headers" quita esa espera.
+
 ## Datos en vivo reales
 
 Hoy no hay una fuente pública de marcadores en tiempo real: aapolo.com y live.aapolo.com (plataforma de streaming por suscripción) no publican una API, y Disney+ tampoco. Por eso el en vivo se carga a mano.
