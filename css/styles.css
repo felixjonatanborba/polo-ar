@@ -261,6 +261,27 @@ details[open] .chev { transform: rotate(180deg); }
 @media (max-width: 860px) { #temporada { order: 1; } }
 @media (max-width: 560px) { .tabla .opt { display: none; } }
 
+/* Anuncios */
+.ad { margin: 0 0 16px; text-align: center; min-height: 90px; }
+.ad[hidden] { display: none; }
+.ad-label { display: block; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: var(--mute); margin-bottom: 4px; }
+#ad-arriba { margin-top: 16px; }
+@media (max-width: 860px) { #ad-lateral { order: 0; } }
+
+/* Página legal */
+.legal { margin: 20px 0; }
+.legal h1.card-title { font-size: 22px; }
+.legal-body { padding: 8px 16px 20px; max-width: 760px; }
+.legal-body h2 { font-size: 18px; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin: 18px 0 6px; }
+.legal-body ul { padding-left: 20px; }
+.legal-body li { margin-bottom: 6px; }
+.logo-img { height: 36px; width: auto; display: block; }
+.logo-oscuro { display: none; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .logo-oscuro { display: block; } :root:not([data-theme="light"]) .logo-claro { display: none; } }
+:root[data-theme="dark"] .logo-oscuro { display: block; }
+:root[data-theme="dark"] .logo-claro { display: none; }
+.site-footer a { color: inherit; }
+
 /* Pie */
 .site-footer { border-top: 1px solid var(--line); color: var(--mute); font-size: 13px; padding: 16px 0 32px; }
 .site-footer p { margin: 0 0 6px; }

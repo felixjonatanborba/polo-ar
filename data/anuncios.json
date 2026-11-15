@@ -1,0 +1,10 @@
+{
+  "_ayuda": "Anuncios de Google AdSense. Mientras 'activo' sea false, los espacios no se muestran. Cuando AdSense apruebe el sitio: poné activo en true, tu ID en 'cliente' (empieza con ca-pub-) y el número de cada bloque de anuncios en 'espacios'. Ver README.md, sección Anuncios.",
+  "activo": false,
+  "cliente": "ca-pub-0000000000000000",
+  "espacios": {
+    "arriba": "",
+    "lateral": "",
+    "abajo": ""
+  }
+}

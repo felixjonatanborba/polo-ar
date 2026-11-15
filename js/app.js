@@ -310,8 +310,29 @@
     etiqueta();
   }
 
+  // ---------- anuncios (Google AdSense) ----------
+  // Se configuran en data/anuncios.json. Con "activo": false no se carga nada.
+  function prepararAnuncios() {
+    getJSON(DATOS + "anuncios.json").then(function (a) {
+      if (!a || !a.activo || !/^ca-pub-\d{10,}$/.test(a.cliente || "") || /^ca-pub-0+$/.test(a.cliente)) return;
+      var sc = document.createElement("script");
+      sc.async = true; sc.crossOrigin = "anonymous";
+      sc.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=" + encodeURIComponent(a.cliente);
+      document.head.appendChild(sc);
+      document.querySelectorAll(".ad[data-espacio]").forEach(function (box) {
+        var slot = (a.espacios || {})[box.getAttribute("data-espacio")];
+        if (!slot) return;
+        box.innerHTML = '<span class="ad-label">Publicidad</span><ins class="adsbygoogle" style="display:block" data-ad-client="' +
+          esc(a.cliente) + '" data-ad-slot="' + esc(slot) + '" data-ad-format="auto" data-full-width-responsive="true"></ins>';
+        box.hidden = false;
+        try { (window.adsbygoogle = window.adsbygoogle || []).push({}); } catch (e) {}
+      });
+    }).catch(function () {});
+  }
+
   // ---------- arranque ----------
   prepararTema();
+  prepararAnuncios();
   Promise.all([getJSON(DATOS + "teams.json"), getJSON(DATOS + "matches.json"), getJSON(DATOS + "tournaments.json")])
     .then(function (r) {
       r[0].equipos.forEach(function (e) { equipos[e.id] = e; });
