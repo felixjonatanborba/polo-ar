@@ -1,5 +1,5 @@
 {
-  "_ayuda": "Un objeto por partido. torneo: palermo | tortugas | hurlingham. fecha: AAAA-MM-DD. fechaAproximada: true si no está confirmada. golesLocal/golesVisitante: null = sin confirmar (se muestra '—'). ganador: 'local' | 'visitante' | null (se usa si no hay goles). progresion: resultado acumulado local-visitante al final de cada chukker. goleadores: {nombre, goles, equipo: 'local' | 'visitante'}. repeticion: link directo a Disney+ o null (usa la página del torneo).",
+  "_ayuda": "Un objeto por partido. torneo: palermo | tortugas | hurlingham. fecha: AAAA-MM-DD. fechaAproximada: true si no está confirmada. golesLocal/golesVisitante: null = sin confirmar (se muestra '—'). ganador: 'local' | 'visitante' | null (se usa si no hay goles). progresion: resultado acumulado local-visitante al final de cada chukker. goleadores: {nombre, goles, equipo: 'local' | 'visitante'}. repeticion: link directo a Disney+ o null (usa la página del torneo). resumen: link opcional a un video de YouTube con el resumen del partido.",
   "partidos": [
     {
       "id": "pal-2026-f2-hiper-aguada",
@@ -15,7 +15,8 @@
       "progresion": [],
       "goleadores": [],
       "nota": "Primera victoria de La Aguada en la Triple Corona 2026: había perdido sus cuatro partidos de Tortugas.",
-      "repeticion": null
+      "repeticion": null,
+      "resumen": "https://www.youtube.com/watch?v=uWNJJPJVKfQ"
     },
     {
       "id": "pal-2026-f2-monjitas-zeta",

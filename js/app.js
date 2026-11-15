@@ -117,6 +117,9 @@
     h += "<h4>Goleadores</h4>";
     h += goleadores(m, a, b);
     if (m.nota) h += "<h4>Notas</h4><p>" + esc(m.nota) + "</p>";
+    var yt = idYouTube(m.resumen);
+    if (yt) h += '<h4>Resumen</h4><div class="video"><iframe src="https://www.youtube-nocookie.com/embed/' + yt +
+      '" title="Resumen: ' + esc(a.nombre) + " vs. " + esc(b.nombre) + '" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>';
     return h + "</div>";
   }
 
@@ -131,6 +134,15 @@
       return "<div><p class=\"muted\">" + esc(e.nombre) + "</p>" + (xs.length ? ul(xs) : '<p class="muted">—</p>') + "</div>";
     };
     return '<div class="cols">' + col("local", a) + col("visitante", b) + "</div>";
+  }
+
+  function idYouTube(url) {
+    var r = /(?:youtu\.be\/|[?&]v=|\/embed\/|\/shorts\/)([A-Za-z0-9_-]{11})/.exec(url || "");
+    return r ? r[1] : null;
+  }
+  function botonResumen(m) {
+    if (!m.resumen) return "";
+    return '<a class="btn yt" href="' + esc(m.resumen) + '" target="_blank" rel="noopener">▶ Ver resumen<span class="sr-only"> (YouTube, se abre en otra pestaña)</span></a>';
   }
 
   function botonRepeticion(m) {
@@ -157,7 +169,7 @@
         '<div class="inf"><span>' + esc(nombreTorneo(m.torneo)) + " · " + esc(m.fase) + "</span>" +
         '<span aria-hidden="true" class="chev">▾</span><span class="sr-only">Ver detalle</span></div>' +
         "</summary>" + detalle(m) + "</details>" +
-        '<div class="acts">' + botonRepeticion(m) + "</div></article>";
+        '<div class="acts">' + botonRepeticion(m) + botonResumen(m) + "</div></article>";
     });
     $("lista").innerHTML = h;
   }
