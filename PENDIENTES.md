@@ -34,4 +34,3 @@ Datos hasta el 15/11/2026. Todo lo que figura acá se muestra en la página con 
 - [ ] ¿Abrir el sitio dentro de la app de escritorio de Claude o como programa de Windows (`.exe`)? Quedó sin resolver en la sesión anterior.
 - [ ] ¿Actualizar el artifact viejo (https://claude.ai/artifact/U243tmzmPm6WYB4dUVAChX), que todavía tiene la versión con noticias?
 - [ ] **Anuncios:** comprar dominio propio, conectarlo en Cloudflare, crear cuenta de AdSense y completar `data/anuncios.json` y `ads.txt` (ver README).
-- [ ] Agregar un correo de contacto en `privacidad.html` (AdSense suele pedir una forma de contacto).
