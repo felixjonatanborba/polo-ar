@@ -1,0 +1,8 @@
+# Cabeceras para Cloudflare Pages
+/data/*
+  Cache-Control: no-cache
+/assets/crests/*
+  Cache-Control: public, max-age=604800
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin

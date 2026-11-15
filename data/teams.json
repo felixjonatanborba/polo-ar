@@ -1,0 +1,253 @@
+{
+  "_ayuda": "Planteles 2026. 'escudo' es la ruta del PNG (null = se muestran iniciales). 'escudoFondoClaro': true si el logo es oscuro. 'jugadores' vacío = plantel sin cargar.",
+  "equipos": [
+    {
+      "id": "la-natividad-la-dolfina",
+      "nombre": "La Natividad-La Dolfina",
+      "escudo": "assets/crests/la-natividad-la-dolfina.png",
+      "escudoFondoClaro": false,
+      "jugadores": [
+        {
+          "nombre": "Camilo Castagnola",
+          "handicap": 10
+        },
+        {
+          "nombre": "Adolfo Cambiaso (n.)",
+          "handicap": 10
+        },
+        {
+          "nombre": "Adolfo Cambiaso (h.)",
+          "handicap": 10
+        },
+        {
+          "nombre": "Bartolomé Castagnola (h.)",
+          "handicap": 10
+        }
+      ]
+    },
+    {
+      "id": "ellerstina-indios-chapaleufu",
+      "nombre": "Ellerstina-Indios Chapaleufú",
+      "escudo": null,
+      "escudoFondoClaro": false,
+      "jugadores": [
+        {
+          "nombre": "Facundo Pieres",
+          "handicap": 10
+        },
+        {
+          "nombre": "Antonio Heguy",
+          "handicap": 9
+        },
+        {
+          "nombre": "Gonzalo Pieres (h.)",
+          "handicap": 9
+        },
+        {
+          "nombre": "Cruz Heguy",
+          "handicap": 9
+        }
+      ]
+    },
+    {
+      "id": "las-monjitas",
+      "nombre": "Las Monjitas",
+      "escudo": "assets/crests/las-monjitas.png",
+      "escudoFondoClaro": false,
+      "jugadores": [
+        {
+          "nombre": "Rufino Bensadón",
+          "handicap": 8
+        },
+        {
+          "nombre": "Lucas Monteverde (n.)",
+          "handicap": 9
+        },
+        {
+          "nombre": "David Stirling",
+          "handicap": 9
+        },
+        {
+          "nombre": "Juan Martín Nero",
+          "handicap": 9
+        }
+      ],
+      "nota": "En Tortugas y en el arranque de Palermo, Ignatius du Plessis (8) reemplaza a David Stirling, que se recupera de una lesión."
+    },
+    {
+      "id": "la-hache",
+      "nombre": "La Hache",
+      "nota": "Para Tortugas y Palermo se alió con Yellowrose (sponsor principal). En el debut de Palermo, Tomás Panelo salió lesionado y entró su hermano Joaquín.",
+      "escudo": "assets/crests/la-hache.png",
+      "escudoFondoClaro": false,
+      "jugadores": [
+        {
+          "nombre": "Hilario Ulloa",
+          "handicap": 9
+        },
+        {
+          "nombre": "Carlos María Ulloa",
+          "handicap": 8
+        },
+        {
+          "nombre": "Benjamín Panelo",
+          "handicap": 8
+        },
+        {
+          "nombre": "Tomás Panelo",
+          "handicap": 9
+        }
+      ]
+    },
+    {
+      "id": "la-ensenada",
+      "nombre": "La Ensenada",
+      "escudo": "assets/crests/la-ensenada.png",
+      "escudoFondoClaro": false,
+      "jugadores": [
+        {
+          "nombre": "Juan Britos",
+          "handicap": 8
+        },
+        {
+          "nombre": "Diego Cavanagh",
+          "handicap": 8
+        },
+        {
+          "nombre": "Juan Martín Zubía",
+          "handicap": 9
+        },
+        {
+          "nombre": "Jerónimo del Carril",
+          "handicap": 8
+        }
+      ]
+    },
+    {
+      "id": "hiper-polo-club",
+      "nombre": "Hiper Polo Club",
+      "escudo": "assets/crests/hiper-polo-club.png",
+      "escudoFondoClaro": false,
+      "jugadores": [
+        {
+          "nombre": "Victorino Ruiz Jorba",
+          "handicap": 8
+        },
+        {
+          "nombre": "Gonzalo Ferrari",
+          "handicap": 8
+        },
+        {
+          "nombre": "Francisco Elizalde",
+          "handicap": 9
+        },
+        {
+          "nombre": "Teodoro Lacau",
+          "handicap": 8
+        }
+      ]
+    },
+    {
+      "id": "la-aguada",
+      "nombre": "La Aguada",
+      "escudo": "assets/crests/la-aguada.png",
+      "escudoFondoClaro": false,
+      "jugadores": [
+        {
+          "nombre": "Bautista Bayugar",
+          "handicap": 8
+        },
+        {
+          "nombre": "Alfredo Bigatti",
+          "handicap": 8
+        },
+        {
+          "nombre": "Joaquín Pittaluga",
+          "handicap": 8
+        },
+        {
+          "nombre": "Ignacio Laprida",
+          "handicap": 8
+        }
+      ],
+      "nota": "En el anuncio de la AAP del 21/04/2026 figuraba como Haras San Pedro, con el mismo plantel.",
+      "nombreAAP": "La Aguada Daily Mail"
+    },
+    {
+      "id": "don-ercole",
+      "nombre": "Don Ercole",
+      "escudo": "assets/crests/don-ercole.png",
+      "escudoFondoClaro": true,
+      "jugadores": [
+        {
+          "nombre": "Facundo Llosa",
+          "handicap": 8
+        },
+        {
+          "nombre": "Kristos Magrini",
+          "handicap": 7
+        },
+        {
+          "nombre": "Pedro Zacharias",
+          "handicap": 8
+        },
+        {
+          "nombre": "Felipe Vercellino",
+          "handicap": 8
+        }
+      ]
+    },
+    {
+      "id": "la-irenita",
+      "nombre": "La Irenita",
+      "nombreAAP": "La Irenita Clinova",
+      "escudo": "assets/crests/la-irenita.png",
+      "escudoFondoClaro": false,
+      "jugadores": [
+        {
+          "nombre": "Pablo Pieres",
+          "handicap": 9
+        },
+        {
+          "nombre": "Paco de Narváez",
+          "handicap": 8
+        },
+        {
+          "nombre": "Pablo Mac Donough",
+          "handicap": 10
+        },
+        {
+          "nombre": "Matías Mac Donough (h.)",
+          "handicap": 7
+        }
+      ],
+      "nota": "Llegó a Tortugas y Palermo desde el clasificatorio (Copas Remonta y Veterinaria)."
+    },
+    {
+      "id": "la-zeta",
+      "nombre": "La Zeta",
+      "nombreAAP": "La Zeta Kazak",
+      "escudo": "assets/crests/la-zeta.png",
+      "escudoFondoClaro": false,
+      "jugadores": [
+        {
+          "nombre": "Guillermo Caset (h.)",
+          "handicap": 9
+        },
+        {
+          "nombre": "Beltrán Laulhé",
+          "handicap": 8
+        },
+        {
+          "nombre": "Lorenzo Chavanne",
+          "handicap": 8
+        },
+        {
+          "nombre": "Nicolás Pieres",
+          "handicap": 8
+        }
+      ],
+      "nota": "Llegó a Tortugas y Palermo desde el clasificatorio (Copas Remonta y Veterinaria)."
+    }
+  ]
+}

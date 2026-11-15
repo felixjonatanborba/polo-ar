@@ -1,0 +1,872 @@
+{
+  "_ayuda": "Un objeto por partido. torneo: palermo | tortugas | hurlingham. fecha: AAAA-MM-DD. fechaAproximada: true si no está confirmada. golesLocal/golesVisitante: null = sin confirmar (se muestra '—'). ganador: 'local' | 'visitante' | null (se usa si no hay goles). progresion: resultado acumulado local-visitante al final de cada chukker. goleadores: {nombre, goles, equipo: 'local' | 'visitante'}. repeticion: link directo a Disney+ o null (usa la página del torneo).",
+  "partidos": [
+    {
+      "id": "pal-2026-f2-hiper-aguada",
+      "torneo": "palermo",
+      "fecha": "2026-11-15",
+      "fechaAproximada": false,
+      "fase": "Zona B · Fecha 2",
+      "local": "hiper-polo-club",
+      "visitante": "la-aguada",
+      "golesLocal": 12,
+      "golesVisitante": 15,
+      "ganador": "visitante",
+      "progresion": [],
+      "goleadores": [],
+      "nota": "Primera victoria de La Aguada en la Triple Corona 2026: había perdido sus cuatro partidos de Tortugas.",
+      "repeticion": null
+    },
+    {
+      "id": "pal-2026-f1-ensenada-irenita",
+      "torneo": "palermo",
+      "fecha": "2026-11-14",
+      "fechaAproximada": false,
+      "fase": "Zona A · Fecha 1",
+      "local": "la-ensenada",
+      "visitante": "la-irenita",
+      "golesLocal": 13,
+      "golesVisitante": 14,
+      "ganador": "visitante",
+      "progresion": [],
+      "goleadores": [],
+      "nota": "La Irenita entró al 8° chukker ganando 13-9, La Ensenada hizo un parcial de 4-0 y llevó el partido a un chukker extra, donde Polito Pieres definió con gol de oro tras un pase de Vizcacha Mac Donough.",
+      "repeticion": "https://www.disneyplus.com/es-mx/browse/entity-49160284-469b-473b-8250-370fab4df14f"
+    },
+    {
+      "id": "pal-2026-f1-hache-ercole",
+      "torneo": "palermo",
+      "fecha": "2026-11-14",
+      "fechaAproximada": false,
+      "fase": "Zona A · Fecha 1 (partido inaugural)",
+      "local": "la-hache",
+      "visitante": "don-ercole",
+      "golesLocal": 16,
+      "golesVisitante": 14,
+      "ganador": "local",
+      "progresion": [
+        "2-1",
+        "5-2",
+        "7-3",
+        "12-3",
+        "14-5",
+        "15-7",
+        "16-10",
+        "16-14"
+      ],
+      "goleadores": [],
+      "nota": "La Hache ganaba 12-3, pero desde el 5° chukker Don Ercole hizo un parcial de 11-4 (4-0 en el último). Tomás Panelo salió lesionado del cuello y lo reemplazó su hermano Joaquín. Goles de Don Ercole: Zacharias 7, Llosa 6 y Vercellino 1.",
+      "repeticion": "https://www.disneyplus.com/es-mx/browse/entity-2e1b05bd-d484-41b4-a76a-6368998f1839"
+    },
+    {
+      "id": "tor-2026-final",
+      "torneo": "tortugas",
+      "fecha": "2026-11-08",
+      "fechaAproximada": false,
+      "fase": "Final",
+      "local": "la-natividad-la-dolfina",
+      "visitante": "la-hache",
+      "golesLocal": 16,
+      "golesVisitante": 10,
+      "ganador": "local",
+      "progresion": [
+        "1-1",
+        "3-3",
+        "4-3",
+        "6-7",
+        "8-8",
+        "11-9",
+        "13-10",
+        "16-10"
+      ],
+      "goleadores": [
+        {
+          "nombre": "B. Castagnola",
+          "goles": 6,
+          "equipo": "local"
+        },
+        {
+          "nombre": "C. Castagnola",
+          "goles": 5,
+          "equipo": "local"
+        },
+        {
+          "nombre": "A. Cambiaso (n.)",
+          "goles": 5,
+          "equipo": "local"
+        },
+        {
+          "nombre": "H. Ulloa",
+          "goles": 4,
+          "equipo": "visitante"
+        },
+        {
+          "nombre": "C. M. Ulloa",
+          "goles": 2,
+          "equipo": "visitante"
+        },
+        {
+          "nombre": "B. Panelo",
+          "goles": 2,
+          "equipo": "visitante"
+        },
+        {
+          "nombre": "T. Panelo",
+          "goles": 2,
+          "equipo": "visitante"
+        }
+      ],
+      "nota": "Se jugó el domingo 8 (estaba programada para el sábado 7). La Hache se fue al descanso ganando 7-6; La Natividad-La Dolfina lo dio vuelta en la segunda mitad. Quinto título de Triple Corona del equipo y 20° triunfo seguido.",
+      "repeticion": null
+    },
+    {
+      "id": "tor-2026-zb-monjitas-hache",
+      "torneo": "tortugas",
+      "fecha": "2026-11-01",
+      "fechaAproximada": true,
+      "fase": "Zona B · definición",
+      "local": "las-monjitas",
+      "visitante": "la-hache",
+      "golesLocal": 16,
+      "golesVisitante": 13,
+      "ganador": "local",
+      "progresion": [
+        "3-2",
+        "6-5",
+        "7-7",
+        "11-7",
+        "12-7",
+        "14-10",
+        "15-13",
+        "16-13"
+      ],
+      "goleadores": [],
+      "nota": "Ganó Las Monjitas (Bensadón 11 goles), pero La Hache ganó la zona por diferencia de gol en el triple empate con Las Monjitas y La Irenita.",
+      "repeticion": null
+    },
+    {
+      "id": "tor-2026-zb-irenita-aguada",
+      "torneo": "tortugas",
+      "fecha": "2026-11-01",
+      "fechaAproximada": true,
+      "fase": "Zona B",
+      "local": "la-irenita",
+      "visitante": "la-aguada",
+      "golesLocal": 16,
+      "golesVisitante": 15,
+      "ganador": "local",
+      "progresion": [],
+      "goleadores": [],
+      "nota": "Tercer triunfo de La Irenita. Pittaluga hizo 8 goles para La Aguada (7 de penal).",
+      "repeticion": null
+    },
+    {
+      "id": "tor-2026-za-lnld-ellerstina",
+      "torneo": "tortugas",
+      "fecha": "2026-10-31",
+      "fechaAproximada": false,
+      "fase": "Zona A · definición",
+      "local": "la-natividad-la-dolfina",
+      "visitante": "ellerstina-indios-chapaleufu",
+      "golesLocal": 18,
+      "golesVisitante": 10,
+      "ganador": "local",
+      "progresion": [
+        "1-2",
+        "4-2",
+        "6-4",
+        "8-4",
+        "10-4",
+        "13-6",
+        "16-6",
+        "18-10"
+      ],
+      "goleadores": [],
+      "nota": "Ganó la zona invicto y clasificó a la final. Camilo Castagnola hizo 8 goles. Los dos primeros chukkers se jugaron en la cancha 7 y el resto en la 6, por el estado del campo.",
+      "repeticion": null
+    },
+    {
+      "id": "tor-2026-zb-monjitas-aguada",
+      "torneo": "tortugas",
+      "fecha": "2026-10-25",
+      "fechaAproximada": false,
+      "fase": "Zona B",
+      "local": "las-monjitas",
+      "visitante": "la-aguada",
+      "golesLocal": 22,
+      "golesVisitante": 8,
+      "ganador": "local",
+      "progresion": [
+        "6-0",
+        "9-2",
+        "10-3",
+        "12-3",
+        "14-4",
+        "18-4",
+        "20-7",
+        "22-8"
+      ],
+      "goleadores": [
+        {
+          "nombre": "Bensadón",
+          "goles": 12,
+          "equipo": "local"
+        },
+        {
+          "nombre": "du Plessis",
+          "goles": 4,
+          "equipo": "local"
+        },
+        {
+          "nombre": "Monteverde (n.)",
+          "goles": 3,
+          "equipo": "local"
+        },
+        {
+          "nombre": "Nero",
+          "goles": 3,
+          "equipo": "local"
+        },
+        {
+          "nombre": "Pittaluga",
+          "goles": 5,
+          "equipo": "visitante"
+        },
+        {
+          "nombre": "Bayugar",
+          "goles": 2,
+          "equipo": "visitante"
+        },
+        {
+          "nombre": "Bigatti",
+          "goles": 1,
+          "equipo": "visitante"
+        }
+      ],
+      "nota": "",
+      "repeticion": null
+    },
+    {
+      "id": "tor-2026-zb-hache-hiper",
+      "torneo": "tortugas",
+      "fecha": "2026-10-25",
+      "fechaAproximada": false,
+      "fase": "Zona B",
+      "local": "la-hache",
+      "visitante": "hiper-polo-club",
+      "golesLocal": 14,
+      "golesVisitante": 10,
+      "ganador": "local",
+      "progresion": [],
+      "goleadores": [],
+      "nota": "Tercer triunfo seguido de La Hache. Ruiz Jorba hizo 7 goles para Híper.",
+      "repeticion": null
+    },
+    {
+      "id": "tor-2026-za-ellerstina-ercole",
+      "torneo": "tortugas",
+      "fecha": "2026-10-24",
+      "fechaAproximada": false,
+      "fase": "Zona A",
+      "local": "ellerstina-indios-chapaleufu",
+      "visitante": "don-ercole",
+      "golesLocal": 16,
+      "golesVisitante": 11,
+      "ganador": "local",
+      "progresion": [],
+      "goleadores": [],
+      "nota": "Facundo Pieres hizo 11 goles (7 de penal). De Don Ercole: Llosa 7, Magrini 3 y Zacharias 1.",
+      "repeticion": null
+    },
+    {
+      "id": "tor-2026-za-lnld-ensenada",
+      "torneo": "tortugas",
+      "fecha": "2026-10-24",
+      "fechaAproximada": false,
+      "fase": "Zona A",
+      "local": "la-natividad-la-dolfina",
+      "visitante": "la-ensenada",
+      "golesLocal": 17,
+      "golesVisitante": 7,
+      "ganador": "local",
+      "progresion": [],
+      "goleadores": [],
+      "nota": "",
+      "repeticion": null
+    },
+    {
+      "id": "tor-2026-zb-hache-aguada",
+      "torneo": "tortugas",
+      "fecha": "2026-10-21",
+      "fechaAproximada": false,
+      "fase": "Zona B",
+      "local": "la-hache",
+      "visitante": "la-aguada",
+      "golesLocal": 30,
+      "golesVisitante": 11,
+      "ganador": "local",
+      "progresion": [
+        "2-2",
+        "5-2",
+        "9-3",
+        "15-5",
+        "18-6",
+        "24-7",
+        "28-9",
+        "30-11"
+      ],
+      "goleadores": [
+        {
+          "nombre": "B. Panelo",
+          "goles": 13,
+          "equipo": "local"
+        },
+        {
+          "nombre": "H. Ulloa",
+          "goles": 8,
+          "equipo": "local"
+        },
+        {
+          "nombre": "C. M. Ulloa",
+          "goles": 4,
+          "equipo": "local"
+        },
+        {
+          "nombre": "T. Panelo",
+          "goles": 3,
+          "equipo": "local"
+        },
+        {
+          "nombre": "Penal 1",
+          "goles": 2,
+          "equipo": "local"
+        }
+      ],
+      "nota": "Los 41 goles igualaron el récord de un partido de Triple Corona.",
+      "repeticion": null
+    },
+    {
+      "id": "tor-2026-zb-irenita-hiper",
+      "torneo": "tortugas",
+      "fecha": "2026-10-21",
+      "fechaAproximada": false,
+      "fase": "Zona B",
+      "local": "la-irenita",
+      "visitante": "hiper-polo-club",
+      "golesLocal": 21,
+      "golesVisitante": 14,
+      "ganador": "local",
+      "progresion": [
+        "1-3",
+        "4-6",
+        "7-6",
+        "11-7",
+        "14-9",
+        "16-9",
+        "19-12",
+        "21-14"
+      ],
+      "goleadores": [
+        {
+          "nombre": "M. Mac Donough (h.)",
+          "goles": 9,
+          "equipo": "local"
+        },
+        {
+          "nombre": "De Narváez",
+          "goles": 6,
+          "equipo": "local"
+        },
+        {
+          "nombre": "Pieres",
+          "goles": 3,
+          "equipo": "local"
+        },
+        {
+          "nombre": "P. Mac Donough",
+          "goles": 1,
+          "equipo": "local"
+        },
+        {
+          "nombre": "Penal 1",
+          "goles": 2,
+          "equipo": "local"
+        }
+      ],
+      "nota": "",
+      "repeticion": null
+    },
+    {
+      "id": "tor-2026-za-lnld-ercole",
+      "torneo": "tortugas",
+      "fecha": "2026-10-19",
+      "fechaAproximada": false,
+      "fase": "Zona A",
+      "local": "la-natividad-la-dolfina",
+      "visitante": "don-ercole",
+      "golesLocal": 27,
+      "golesVisitante": 7,
+      "ganador": "local",
+      "progresion": [],
+      "goleadores": [],
+      "nota": "Camilo Castagnola hizo 11 goles.",
+      "repeticion": null
+    },
+    {
+      "id": "tor-2026-za-zeta-ensenada",
+      "torneo": "tortugas",
+      "fecha": "2026-10-19",
+      "fechaAproximada": false,
+      "fase": "Zona A",
+      "local": "la-zeta",
+      "visitante": "la-ensenada",
+      "golesLocal": 14,
+      "golesVisitante": 11,
+      "ganador": "local",
+      "progresion": [],
+      "goleadores": [],
+      "nota": "",
+      "repeticion": null
+    },
+    {
+      "id": "tor-2026-zb-hache-irenita",
+      "torneo": "tortugas",
+      "fecha": "2026-10-18",
+      "fechaAproximada": false,
+      "fase": "Zona B",
+      "local": "la-hache",
+      "visitante": "la-irenita",
+      "golesLocal": 18,
+      "golesVisitante": 12,
+      "ganador": "local",
+      "progresion": [],
+      "goleadores": [],
+      "nota": "Debut de La Hache en Tortugas. Pololine informó 19-12; La Nación y Alternativa en Papel, 18-12.",
+      "repeticion": null
+    },
+    {
+      "id": "tor-2026-zb-monjitas-hiper",
+      "torneo": "tortugas",
+      "fecha": "2026-10-18",
+      "fechaAproximada": false,
+      "fase": "Zona B",
+      "local": "las-monjitas",
+      "visitante": "hiper-polo-club",
+      "golesLocal": 16,
+      "golesVisitante": 15,
+      "ganador": "local",
+      "progresion": [
+        "2-2",
+        "4-3",
+        "8-4",
+        "10-5",
+        "13-7",
+        "14-8",
+        "15-12",
+        "16-15"
+      ],
+      "goleadores": [],
+      "nota": "Las Monjitas jugó sin David Stirling; entró Ignatius du Plessis.",
+      "repeticion": null
+    },
+    {
+      "id": "tor-2026-za-lnld-zeta",
+      "torneo": "tortugas",
+      "fecha": "2026-10-16",
+      "fechaAproximada": false,
+      "fase": "Zona A",
+      "local": "la-natividad-la-dolfina",
+      "visitante": "la-zeta",
+      "golesLocal": 15,
+      "golesVisitante": 14,
+      "ganador": "local",
+      "progresion": [
+        "4-0",
+        "6-2",
+        "9-3",
+        "10-5",
+        "11-5",
+        "13-8",
+        "14-12",
+        "15-14"
+      ],
+      "goleadores": [
+        {
+          "nombre": "B. Castagnola",
+          "goles": 5,
+          "equipo": "local"
+        },
+        {
+          "nombre": "C. Castagnola",
+          "goles": 4,
+          "equipo": "local"
+        },
+        {
+          "nombre": "A. Cambiaso (n.)",
+          "goles": 4,
+          "equipo": "local"
+        },
+        {
+          "nombre": "A. Cambiaso (h.)",
+          "goles": 2,
+          "equipo": "local"
+        },
+        {
+          "nombre": "Chavanne",
+          "goles": 9,
+          "equipo": "visitante"
+        },
+        {
+          "nombre": "Caset",
+          "goles": 4,
+          "equipo": "visitante"
+        },
+        {
+          "nombre": "N. Pieres",
+          "goles": 1,
+          "equipo": "visitante"
+        }
+      ],
+      "nota": "Debut de La Natividad-La Dolfina en Tortugas. La Zeta Kazak, que llegó desde el clasificatorio, descontó hasta quedar a un gol.",
+      "repeticion": null
+    },
+    {
+      "id": "tor-2026-za-ellerstina-ensenada",
+      "torneo": "tortugas",
+      "fecha": "2026-10-16",
+      "fechaAproximada": false,
+      "fase": "Zona A",
+      "local": "ellerstina-indios-chapaleufu",
+      "visitante": "la-ensenada",
+      "golesLocal": 16,
+      "golesVisitante": 15,
+      "ganador": "local",
+      "progresion": [
+        "2-4",
+        "5-7",
+        "5-11",
+        "7-12",
+        "10-12",
+        "12-12",
+        "14-14",
+        "16-15"
+      ],
+      "goleadores": [],
+      "nota": "Ellerstina-Indios Chapaleufú perdía 11-5 y lo dio vuelta.",
+      "repeticion": null
+    },
+    {
+      "id": "tor-2026-zb-irenita-monjitas",
+      "torneo": "tortugas",
+      "fecha": "2026-10-15",
+      "fechaAproximada": false,
+      "fase": "Zona B",
+      "local": "la-irenita",
+      "visitante": "las-monjitas",
+      "golesLocal": 14,
+      "golesVisitante": 12,
+      "ganador": "local",
+      "progresion": [],
+      "goleadores": [],
+      "nota": "La Irenita, que llegó desde el clasificatorio, le ganó al tercer equipo en handicap.",
+      "repeticion": null
+    },
+    {
+      "id": "tor-2026-zb-hiper-aguada",
+      "torneo": "tortugas",
+      "fecha": "2026-10-15",
+      "fechaAproximada": false,
+      "fase": "Zona B",
+      "local": "hiper-polo-club",
+      "visitante": "la-aguada",
+      "golesLocal": 21,
+      "golesVisitante": 10,
+      "ganador": "local",
+      "progresion": [
+        "0-2",
+        "3-5",
+        "7-5",
+        "10-7",
+        "14-8",
+        "18-8",
+        "18-9",
+        "21-10"
+      ],
+      "goleadores": [],
+      "nota": "Victorino Ruiz Jorba hizo 10 goles. Se jugó en la sede de la AAP en Pilar por la lluvia.",
+      "repeticion": null
+    },
+    {
+      "id": "tor-2026-za-ellerstina-zeta",
+      "torneo": "tortugas",
+      "fecha": "2026-10-06",
+      "fechaAproximada": false,
+      "fase": "Zona A",
+      "local": "ellerstina-indios-chapaleufu",
+      "visitante": "la-zeta",
+      "golesLocal": 18,
+      "golesVisitante": 10,
+      "ganador": "local",
+      "progresion": [],
+      "goleadores": [],
+      "nota": "Facundo Pieres hizo 10 goles en el partido inaugural del torneo.",
+      "repeticion": null
+    },
+    {
+      "id": "tor-2026-za-ensenada-ercole",
+      "torneo": "tortugas",
+      "fecha": "2026-10-06",
+      "fechaAproximada": false,
+      "fase": "Zona A",
+      "local": "la-ensenada",
+      "visitante": "don-ercole",
+      "golesLocal": 17,
+      "golesVisitante": 13,
+      "ganador": "local",
+      "progresion": [],
+      "goleadores": [],
+      "nota": "Don Ercole jugó sin Facundo Llosa ni Kristos Magrini, lesionados; entraron Lucas Criado (h.) y Mariano González (h.).",
+      "repeticion": null
+    },
+    {
+      "id": "hur-2026-final",
+      "torneo": "hurlingham",
+      "fecha": "2026-10-04",
+      "fechaAproximada": false,
+      "fase": "Final",
+      "local": "la-natividad-la-dolfina",
+      "visitante": "la-hache",
+      "golesLocal": 18,
+      "golesVisitante": 14,
+      "ganador": "local",
+      "progresion": [
+        "1-1",
+        "3-2",
+        "6-3",
+        "9-3",
+        "11-7",
+        "15-9",
+        "17-12",
+        "18-14"
+      ],
+      "goleadores": [
+        {
+          "nombre": "C. Castagnola",
+          "goles": 8,
+          "equipo": "local"
+        },
+        {
+          "nombre": "A. Cambiaso (n.)",
+          "goles": 5,
+          "equipo": "local"
+        },
+        {
+          "nombre": "B. Castagnola",
+          "goles": 4,
+          "equipo": "local"
+        },
+        {
+          "nombre": "A. Cambiaso (h.)",
+          "goles": 1,
+          "equipo": "local"
+        }
+      ],
+      "nota": "Final reprogramada por lluvia (estaba prevista para el sábado 3).",
+      "repeticion": null
+    },
+    {
+      "id": "hur-2026-semi-hache-ellerstina",
+      "torneo": "hurlingham",
+      "fecha": "2026-09-26",
+      "fechaAproximada": true,
+      "fase": "Semifinal",
+      "local": "la-hache",
+      "visitante": "ellerstina-indios-chapaleufu",
+      "golesLocal": 13,
+      "golesVisitante": 12,
+      "ganador": "local",
+      "progresion": [],
+      "goleadores": [],
+      "nota": "Gran partido de Benjamín Panelo. La Hache llegó a su primera final de Hurlingham.",
+      "repeticion": null
+    },
+    {
+      "id": "hur-2026-semi-lnld-monjitas",
+      "torneo": "hurlingham",
+      "fecha": "2026-09-25",
+      "fechaAproximada": false,
+      "fase": "Semifinal",
+      "local": "la-natividad-la-dolfina",
+      "visitante": "las-monjitas",
+      "golesLocal": 22,
+      "golesVisitante": 10,
+      "ganador": "local",
+      "progresion": [],
+      "goleadores": [
+        {
+          "nombre": "Bensadón",
+          "goles": 7,
+          "equipo": "visitante"
+        },
+        {
+          "nombre": "Monteverde (n.)",
+          "goles": 1,
+          "equipo": "visitante"
+        },
+        {
+          "nombre": "Stirling",
+          "goles": 1,
+          "equipo": "visitante"
+        },
+        {
+          "nombre": "Nero",
+          "goles": 1,
+          "equipo": "visitante"
+        }
+      ],
+      "nota": "Poroto Cambiaso fue la figura con 14 goles. Camilo Castagnola hizo 7.",
+      "repeticion": null
+    },
+    {
+      "id": "hur-2026-cf-hache-hiper",
+      "torneo": "hurlingham",
+      "fecha": "2026-09-23",
+      "fechaAproximada": false,
+      "fase": "Cuartos de final",
+      "local": "la-hache",
+      "visitante": "hiper-polo-club",
+      "golesLocal": 19,
+      "golesVisitante": 10,
+      "ganador": "local",
+      "progresion": [
+        "1-2",
+        "6-2",
+        "8-5",
+        "11-6",
+        "14-8",
+        "17-9",
+        "18-9",
+        "19-10"
+      ],
+      "goleadores": [],
+      "nota": "",
+      "repeticion": null
+    },
+    {
+      "id": "hur-2026-cf-ellerstina-ercole",
+      "torneo": "hurlingham",
+      "fecha": "2026-09-23",
+      "fechaAproximada": false,
+      "fase": "Cuartos de final",
+      "local": "ellerstina-indios-chapaleufu",
+      "visitante": "don-ercole",
+      "golesLocal": 16,
+      "golesVisitante": 9,
+      "ganador": "local",
+      "progresion": [
+        "1-1",
+        "2-3",
+        "6-5",
+        "9-5",
+        "10-6",
+        "11-7",
+        "13-8",
+        "16-9"
+      ],
+      "goleadores": [],
+      "nota": "Don Ercole jugó sin Kristos Magrini; entró Ignacio Viana.",
+      "repeticion": null
+    },
+    {
+      "id": "hur-2026-cf-monjitas-ensenada",
+      "torneo": "hurlingham",
+      "fecha": "2026-09-22",
+      "fechaAproximada": false,
+      "fase": "Cuartos de final",
+      "local": "las-monjitas",
+      "visitante": "la-ensenada",
+      "golesLocal": 15,
+      "golesVisitante": 11,
+      "ganador": "local",
+      "progresion": [
+        "1-1",
+        "3-4",
+        "4-4",
+        "6-5",
+        "8-6",
+        "8-8",
+        "10-9",
+        "15-11"
+      ],
+      "goleadores": [
+        {
+          "nombre": "Bensadón",
+          "goles": 10,
+          "equipo": "local"
+        },
+        {
+          "nombre": "Stirling",
+          "goles": 3,
+          "equipo": "local"
+        },
+        {
+          "nombre": "Monteverde (n.)",
+          "goles": 1,
+          "equipo": "local"
+        },
+        {
+          "nombre": "Nero",
+          "goles": 1,
+          "equipo": "local"
+        },
+        {
+          "nombre": "Del Carril",
+          "goles": 5,
+          "equipo": "visitante"
+        },
+        {
+          "nombre": "Cavanagh",
+          "goles": 3,
+          "equipo": "visitante"
+        },
+        {
+          "nombre": "Britos",
+          "goles": 2,
+          "equipo": "visitante"
+        },
+        {
+          "nombre": "Zubía",
+          "goles": 1,
+          "equipo": "visitante"
+        }
+      ],
+      "nota": "",
+      "repeticion": null
+    },
+    {
+      "id": "hur-2026-cf-lnld-aguada",
+      "torneo": "hurlingham",
+      "fecha": "2026-09-22",
+      "fechaAproximada": false,
+      "fase": "Cuartos de final",
+      "local": "la-natividad-la-dolfina",
+      "visitante": "la-aguada",
+      "golesLocal": 26,
+      "golesVisitante": 3,
+      "ganador": "local",
+      "progresion": [
+        "4-1",
+        "7-2",
+        "11-2",
+        "13-2",
+        "16-2",
+        "20-2",
+        "23-3",
+        "26-3"
+      ],
+      "goleadores": [],
+      "nota": "",
+      "repeticion": null
+    }
+  ]
+}

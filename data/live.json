@@ -1,0 +1,20 @@
+{
+  "_ayuda": "En vivo, cargado a mano. Con 'partido': null no hay partido en curso. Para cargar uno, copiá el ejemplo de README.md. 'actualizado' en formato AAAA-MM-DDTHH:MM-03:00.",
+  "actualizado": "2026-11-15T18:05-03:00",
+  "partido": {
+    "torneo": "palermo",
+    "fase": "Zona B · Fecha 2",
+    "local": "las-monjitas",
+    "visitante": "la-zeta",
+    "golesLocal": null,
+    "golesVisitante": null,
+    "chukker": null,
+    "progresion": [],
+    "nota": "En juego en la cancha 1 de Palermo. Marcador sin cargar: miralo en Disney+.",
+    "transmision": "https://www.disneyplus.com/es-419/browse/entity-d50ad327-bbc1-467f-b802-cee1852a9337"
+  },
+  "links": {
+    "disney": "https://www.disneyplus.com/es-419/browse/entity-d50ad327-bbc1-467f-b802-cee1852a9337",
+    "aap": "https://live.aapolo.com/"
+  }
+}

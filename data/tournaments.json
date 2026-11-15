@@ -1,0 +1,177 @@
+{
+  "_ayuda": "Torneos de la Triple Corona (para la franja y los filtros) y próximos torneos de la AAP.",
+  "tripleCorona": [
+    {
+      "id": "hurlingham",
+      "orden": 1,
+      "nombre": "133° Abierto de Hurlingham",
+      "corto": "Hurlingham",
+      "estado": "terminado",
+      "campeon": "la-natividad-la-dolfina",
+      "subcampeon": "la-hache",
+      "resumen": "Final 18 – 14 · 4 de octubre",
+      "disney": null,
+      "copa": "Ayrshire Cup",
+      "inicio": "2026-09-22",
+      "finalProgramada": "2026-10-03"
+    },
+    {
+      "id": "tortugas",
+      "orden": 2,
+      "nombre": "86° Abierto de Tortugas",
+      "corto": "Tortugas",
+      "estado": "terminado",
+      "campeon": "la-natividad-la-dolfina",
+      "subcampeon": "la-hache",
+      "resumen": "Final 16 – 10 · 8 de noviembre",
+      "disney": null,
+      "copa": "Copa Emilio de Anchorena",
+      "inicio": "2026-10-06",
+      "finalProgramada": "2026-11-07"
+    },
+    {
+      "id": "palermo",
+      "orden": 3,
+      "nombre": "133° Abierto Argentino de Polo",
+      "corto": "Palermo",
+      "estado": "en juego",
+      "campeon": null,
+      "subcampeon": null,
+      "resumen": "Final programada el 12 de diciembre · Campo Argentino de Polo",
+      "destacados": [
+        {
+          "equipo": "la-irenita",
+          "texto": "ganó su debut"
+        },
+        {
+          "equipo": "la-hache",
+          "texto": "ganó su debut"
+        },
+        {
+          "equipo": "la-aguada",
+          "texto": "ganó su debut"
+        }
+      ],
+      "disney": "https://www.disneyplus.com/es-419/browse/entity-d50ad327-bbc1-467f-b802-cee1852a9337",
+      "copa": null,
+      "inicio": "2026-11-10",
+      "finalProgramada": "2026-12-12"
+    }
+  ],
+  "temporada": {
+    "fuente": "https://www.aapolo.com/noticias/detalle/9112",
+    "fuenteTitulo": "AAP · Anuncio de los equipos de la Triple Corona 2026 (21/04/2026)",
+    "formato": "En 2026 los equipos clasificados juegan dos torneos de la Triple Corona (Tortugas y Palermo), y no solo el Abierto Argentino.",
+    "partidos": 52,
+    "partidosAnterior": 44,
+    "desde": "2026-09-22",
+    "hasta": "2026-12-12",
+    "clasificados": [
+      {
+        "nombre": "La Natividad La Dolfina",
+        "equipo": "la-natividad-la-dolfina",
+        "handicap": 40,
+        "nota": "campeón de la Triple Corona 2025"
+      },
+      {
+        "nombre": "Ellerstina Indios Chapaleufú",
+        "equipo": "ellerstina-indios-chapaleufu",
+        "handicap": 37,
+        "nota": "subcampeón de Tortugas y Palermo 2025"
+      },
+      {
+        "nombre": "Las Monjitas",
+        "equipo": "las-monjitas",
+        "handicap": 35,
+        "nota": "vuelve después de siete años"
+      },
+      {
+        "nombre": "La Hache Polo Team",
+        "equipo": "la-hache",
+        "handicap": 34,
+        "nota": null
+      },
+      {
+        "nombre": "La Ensenada",
+        "equipo": "la-ensenada",
+        "handicap": 33,
+        "nota": null
+      },
+      {
+        "nombre": "Híper Polo Club",
+        "equipo": "hiper-polo-club",
+        "handicap": 33,
+        "nota": "debut en la Triple Corona"
+      },
+      {
+        "nombre": "Haras San Pedro",
+        "equipo": "la-aguada",
+        "handicap": 32,
+        "nota": "debut en la Triple Corona · juega como La Aguada (mismo plantel)"
+      },
+      {
+        "nombre": "Don Ercole",
+        "equipo": "don-ercole",
+        "handicap": 31,
+        "nota": "ganó el Repechaje 2025 como La Aguada DE"
+      }
+    ],
+    "clasificatorio": {
+      "nombre": "Copas Remonta y Veterinaria",
+      "descripcion": "Reparte los dos últimos lugares para Tortugas y Palermo. Ocho equipos en dos grupos de cuatro; clasifica el ganador de cada grupo.",
+      "fechas": [
+        "2026-09-24",
+        "2026-09-28",
+        "2026-10-02"
+      ],
+      "equipos": [
+        "La Irenita",
+        "La Zeta Kazak",
+        "La Dolfina II",
+        "Velay",
+        "La Ensenada II",
+        "La Dolfina III",
+        "La Irenita II",
+        "La Matera"
+      ]
+    }
+  },
+  "proximos": [
+    {
+      "fecha": "2026-11-20",
+      "nombre": "Copa Soberanía · Liga Fereal Magdala",
+      "categoria": "Mayores",
+      "aapId": 2844
+    },
+    {
+      "fecha": "2026-11-20",
+      "nombre": "Ladies Gold Cup",
+      "categoria": "Femenino",
+      "aapId": 2827
+    },
+    {
+      "fecha": "2026-11-20",
+      "nombre": "Circuito Camino Real",
+      "categoria": "Mayores",
+      "aapId": 2828
+    },
+    {
+      "fecha": "2026-11-28",
+      "nombre": "Liga Metropolitana",
+      "categoria": "Mayores",
+      "aapId": 2835
+    },
+    {
+      "fecha": "2026-12-01",
+      "nombre": "Pia Pando",
+      "categoria": "Femenino",
+      "aapId": 2829
+    },
+    {
+      "fecha": "2026-12-15",
+      "nombre": "Super Copa del Mar",
+      "categoria": "Mayores",
+      "aapId": 2839
+    }
+  ]
+}

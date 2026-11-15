@@ -1,0 +1,10 @@
+.wrangler/
+node_modules/
+.DS_Store
+Thumbs.db
+
+# Originales y copias de trabajo (no se publican)
+polo-argentino*.html
+* - copia.*
+*.webp
+_originales/
