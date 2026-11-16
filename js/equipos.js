@@ -6,6 +6,9 @@
   "use strict";
 
   var equipos = {}, partidos = [], torneos = { tripleCorona: [] };
+  // Idiomas: t() traduce textos fijos y d() textos de los datos (ver js/i18n.js).
+  var I = window.PoloI18n || { t: function (k) { return k; }, d: function (s) { return s; }, locale: function () { return "es-AR"; }, listo: function () { return Promise.resolve(); } };
+  var t = I.t, d = I.d;
 
   function $(id) { return document.getElementById(id); }
   function esc(s) {
@@ -21,7 +24,7 @@
   }
   function fecha(iso, opts) {
     var p = iso.split("-");
-    return new Date(+p[0], +p[1] - 1, +p[2]).toLocaleDateString("es-AR", opts || { day: "numeric", month: "short" }).replace(".", "");
+    return new Date(+p[0], +p[1] - 1, +p[2]).toLocaleDateString(I.locale(), opts || { day: "numeric", month: "short" }).replace(".", "");
   }
   function eq(id) { return equipos[id] || { id: id, nombre: id, escudo: null, jugadores: [] }; }
   function total(e) { return e.jugadores.reduce(function (s, j) { return s + (+j.handicap || 0); }, 0); }
@@ -68,23 +71,23 @@
     return r;
   }
   function forma(lista, n) {
-    return '<span class="forma" aria-label="Últimos partidos">' + lista.slice(0, n).map(function (x) {
-      return '<i class="' + (x.gano ? "g" : "p") + '" title="' + (x.gano ? "Ganó" : "Perdió") + " vs. " + esc(eq(x.rival).nombre) + '">' + (x.gano ? "G" : "P") + "</i>";
+    return '<span class="forma" aria-label="' + esc(t("eq.ultimos.aria")) + '">' + lista.slice(0, n).map(function (x) {
+      return '<i class="' + (x.gano ? "g" : "p") + '" title="' + (x.gano ? t("eq.gano") : t("eq.perdio")) + " vs. " + esc(eq(x.rival).nombre) + '">' + (x.gano ? t("eq.g") : t("eq.p")) + "</i>";
     }).join("") + "</span>";
   }
 
   // ---------- grilla de equipos ----------
   function grilla() {
-    document.title = "Equipos · PoloAR";
+    document.title = t("eq.titulo");
     var lista = Object.keys(equipos).map(function (k) { return equipos[k]; })
       .sort(function (a, b) { return total(b) - total(a) || a.nombre.localeCompare(b.nombre, "es"); });
-    var h = '<section class="eq-head-list"><h1>Equipos 2026</h1><p class="muted">Los equipos de la Triple Corona, ordenados por handicap. Tocá uno para ver su ficha.</p></section><div class="eq-grid">';
+    var h = '<section class="eq-head-list"><h1>' + t("sec.equipos") + '</h1><p class="muted">' + t("eq.intro") + '</p></section><div class="eq-grid">';
     lista.forEach(function (e) {
       var ps = partidosDe(e.id), r = resumen(ps);
       h += '<a class="eq-card" href="equipos.html?id=' + encodeURIComponent(e.id) + '">' + escudo(e.id, "xl") +
         '<div class="eq-card-info"><h2>' + esc(e.nombre) + "</h2>" +
-        '<div class="eq-card-meta"><span><b>' + (e.jugadores.length ? total(e) : "—") + "</b> HCP</span><span><b>" + r.pg + "-" + r.pp + "</b> G-P</span></div>" +
-        (ps.length ? forma(ps, 5) : '<span class="muted">Sin partidos cargados</span>') + "</div></a>";
+        '<div class="eq-card-meta"><span><b>' + (e.jugadores.length ? total(e) : "—") + "</b> HCP</span><span><b>" + r.pg + "-" + r.pp + "</b> " + t("eq.gp") + "</span></div>" +
+        (ps.length ? forma(ps, 5) : '<span class="muted">' + t("eq.sin.partidos") + "</span>") + "</div></a>";
     });
     $("vista").innerHTML = h + "</div>";
   }
@@ -92,67 +95,67 @@
   // ---------- ficha de un equipo ----------
   function ficha(id) {
     var e = equipos[id];
-    if (!e) { $("vista").innerHTML = '<p class="empty">No encontré ese equipo. <a href="equipos.html">Ver todos los equipos</a>.</p>'; return; }
+    if (!e) { $("vista").innerHTML = '<p class="empty">' + t("eq.no.encontre") + ' <a href="equipos.html">' + t("eq.ver.todos") + "</a>.</p>"; return; }
     document.title = e.nombre + " · PoloAR";
     var ps = partidosDe(id), r = resumen(ps);
     var ranking = Object.keys(equipos).map(function (k) { return equipos[k]; })
       .sort(function (a, b) { return total(b) - total(a); }).map(function (x) { return x.id; }).indexOf(id) + 1;
 
-    var h = '<a class="volver" href="equipos.html">← Todos los equipos</a>';
+    var h = '<a class="volver" href="equipos.html">' + t("eq.volver") + "</a>";
 
     // Encabezado
     h += '<section class="eq-hero">' + escudo(id, "xxl") + '<div class="eq-hero-txt">' +
-      '<div class="eq-kicker">Triple Corona 2026</div><h1>' + esc(e.nombre) + "</h1>" +
-      (e.nombreAAP && e.nombreAAP !== e.nombre ? '<div class="muted">En la AAP: ' + esc(e.nombreAAP) + "</div>" : "") +
+      '<div class="eq-kicker">' + t("triple") + "</div><h1>" + esc(e.nombre) + "</h1>" +
+      (e.nombreAAP && e.nombreAAP !== e.nombre ? '<div class="muted">' + t("eq.en.aap") + esc(e.nombreAAP) + "</div>" : "") +
       '<div class="eq-stats">' +
-      stat(e.jugadores.length ? total(e) : "—", "Handicap") +
-      stat("#" + ranking, "Por handicap") +
-      stat(r.pg + "-" + r.pp, "Ganados-Perdidos") +
-      stat(r.conGoles ? (r.gf - r.gc > 0 ? "+" : "") + (r.gf - r.gc) : "—", "Dif. de gol") +
-      "</div>" + (ps.length ? '<div class="eq-forma">Últimos: ' + forma(ps, 5) + "</div>" : "") + "</div></section>";
+      stat(e.jugadores.length ? total(e) : "—", t("eq.handicap")) +
+      stat("#" + ranking, t("eq.por.handicap")) +
+      stat(r.pg + "-" + r.pp, t("eq.ganados")) +
+      stat(r.conGoles ? (r.gf - r.gc > 0 ? "+" : "") + (r.gf - r.gc) : "—", t("eq.dif")) +
+      "</div>" + (ps.length ? '<div class="eq-forma">' + t("eq.ultimos") + forma(ps, 5) + "</div>" : "") + "</div></section>";
 
     // Plantel
-    h += '<section class="card"><h2 class="card-title">Plantel</h2>';
+    h += '<section class="card"><h2 class="card-title">' + t("eq.plantel") + "</h2>";
     if (e.jugadores.length) {
       h += '<div class="pl-grid">' + e.jugadores.map(function (j) {
         var av = j.foto
           ? '<span class="pl-avatar con-foto" data-ini="' + esc(iniciales(j.nombre)) + '"><img src="' + esc(j.foto) + '" alt="" loading="lazy"></span>'
           : '<span class="pl-avatar" aria-hidden="true">' + esc(iniciales(j.nombre)) + "</span>";
         return '<div class="pl-card">' + av + '<div class="pl-nombre">' + esc(j.nombre) +
-          '</div><div class="pl-hcp"><b>' + esc(j.handicap) + "</b> handicap</div></div>";
+          '</div><div class="pl-hcp"><b>' + esc(j.handicap) + "</b> " + t("eq.hcp") + "</div></div>";
       }).join("") + "</div>";
     } else {
-      h += '<p class="empty">Plantel sin cargar.</p>';
+      h += '<p class="empty">' + t("sin.plantel") + ".</p>";
     }
-    if (e.nota) h += '<p class="eq-nota">' + esc(e.nota) + "</p>";
+    if (e.nota) h += '<p class="eq-nota">' + esc(d(e.nota)) + "</p>";
     h += "</section>";
 
     // Rendimiento por torneo
-    h += '<section class="card"><h2 class="card-title">Rendimiento por torneo</h2><table class="tabla eq-tabla"><thead><tr><th scope="col">Torneo</th><th scope="col">Resultado</th><th scope="col" class="num">PJ</th><th scope="col" class="num">G-P</th><th scope="col" class="num opt">Goles</th></tr></thead><tbody>';
+    h += '<section class="card"><h2 class="card-title">' + t("eq.rendimiento") + '</h2><table class="tabla eq-tabla"><thead><tr><th scope="col">' + t("col.torneo") + '</th><th scope="col">' + t("eq.resultado") + '</th><th scope="col" class="num">' + t("eq.pj") + '</th><th scope="col" class="num">' + t("eq.gp") + '</th><th scope="col" class="num opt">' + t("eq.goles") + '</th></tr></thead><tbody>';
     torneos.tripleCorona.slice().sort(function (a, b) { return a.orden - b.orden; }).forEach(function (t) {
       var lt = ps.filter(function (x) { return x.m.torneo === t.id; }), rt = resumen(lt);
-      var res = t.campeon === id ? '<span class="pill oro">Campeón</span>' :
-        t.subcampeon === id ? '<span class="pill plata">Subcampeón</span>' :
-        !lt.length ? '<span class="muted">No jugó</span>' :
-        t.estado === "en juego" ? '<span class="pill vivo">En juego</span>' :
-        '<span class="muted">' + esc(lt[0].m.fase.split(" · ")[0]) + "</span>";
-      h += "<tr><td>" + esc(t.nombre) + "</td><td>" + res + '</td><td class="num">' + rt.pj + '</td><td class="num">' + rt.pg + "-" + rt.pp +
+      var res = t.campeon === id ? '<span class="pill oro">' + I.t("eq.campeon") + "</span>" :
+        t.subcampeon === id ? '<span class="pill plata">' + I.t("eq.subcampeon") + "</span>" :
+        !lt.length ? '<span class="muted">' + I.t("eq.no.jugo") + "</span>" :
+        t.estado === "en juego" ? '<span class="pill vivo">' + I.t("en.juego") + "</span>" :
+        '<span class="muted">' + esc(d(lt[0].m.fase.split(" · ")[0])) + "</span>";
+      h += "<tr><td>" + esc(d(t.nombre)) + "</td><td>" + res + '</td><td class="num">' + rt.pj + '</td><td class="num">' + rt.pg + "-" + rt.pp +
         '</td><td class="num opt">' + (rt.conGoles ? rt.gf + "-" + rt.gc : "—") + "</td></tr>";
     });
     h += "</tbody></table></section>";
 
     // Resultados
-    h += '<section class="card"><h2 class="card-title">Resultados</h2>';
-    if (!ps.length) h += '<p class="empty">Todavía no hay partidos cargados de este equipo.</p>';
+    h += '<section class="card"><h2 class="card-title">' + I.t("sec.resultados") + "</h2>";
+    if (!ps.length) h += '<p class="empty">' + I.t("eq.sin.resultados") + "</p>";
     else h += '<ul class="eq-res">' + ps.map(function (x) {
       var t = torneo(x.m.torneo);
       return '<li><a href="./?torneo=' + encodeURIComponent(x.m.torneo) + "#" + encodeURIComponent(x.m.id) + '">' +
         '<span class="res-f">' + esc(fecha(x.m.fecha)) + "</span>" +
-        '<span class="pill ' + (x.gano ? "g" : "p") + '">' + (x.gano ? "G" : "P") + "</span>" +
+        '<span class="pill ' + (x.gano ? "g" : "p") + '">' + (x.gano ? I.t("eq.g") : I.t("eq.p")) + "</span>" +
         '<span class="res-rival">' + escudo(x.rival, "sm") + '<span><span class="muted">vs.</span> ' + esc(eq(x.rival).nombre) +
-        '<small>' + esc(t.corto || t.nombre) + " · " + esc(x.m.fase) + "</small></span></span>" +
+        '<small>' + esc(t.corto || d(t.nombre)) + " · " + esc(d(x.m.fase)) + "</small></span></span>" +
         '<span class="res-sc">' + (x.hay ? x.gf + " – " + x.gc : "—") + "</span></a>" +
-        (x.m.resumen ? '<a class="btn yt res-yt" href="' + esc(x.m.resumen) + '" target="_blank" rel="noopener">▶ Resumen<span class="sr-only"> (YouTube)</span></a>' : "") +
+        (x.m.resumen ? '<a class="btn yt res-yt" href="' + esc(x.m.resumen) + '" target="_blank" rel="noopener">' + I.t("eq.resumen") + '<span class="sr-only"> (YouTube)</span></a>' : "") +
         "</li>";
     }).join("") + "</ul>";
     h += "</section>";
@@ -166,7 +169,7 @@
     var r = document.documentElement, b = $("tema");
     if (!b) return;
     function oscuro() { var t = r.getAttribute("data-theme"); return t ? t === "dark" : matchMedia("(prefers-color-scheme: dark)").matches; }
-    function etiqueta() { b.setAttribute("aria-label", oscuro() ? "Cambiar a modo claro" : "Cambiar a modo oscuro"); }
+    function etiqueta() { b.setAttribute("aria-label", oscuro() ? I.t("tema.claro") : I.t("tema.oscuro")); }
     b.addEventListener("click", function () {
       var n = oscuro() ? "light" : "dark"; r.setAttribute("data-theme", n);
       try { localStorage.setItem("polo-tema", n); } catch (e) {}
@@ -175,13 +178,13 @@
     etiqueta();
   })();
 
-  Promise.all([getJSON("data/teams.json"), getJSON("data/matches.json"), getJSON("data/tournaments.json")]).then(function (r) {
+  Promise.all([getJSON("data/teams.json"), getJSON("data/matches.json"), getJSON("data/tournaments.json"), I.listo()]).then(function (r) {
     r[0].equipos.forEach(function (e) { equipos[e.id] = e; });
     partidos = r[1].partidos; torneos = r[2];
     var id = new URLSearchParams(location.search).get("id");
     if (id) ficha(id); else grilla();
     window.scrollTo(0, 0);
   }).catch(function (err) {
-    $("vista").innerHTML = '<p class="empty">' + (location.protocol === "file:" ? "Abrí la web con iniciar.bat para que carguen los datos." : "No se pudieron cargar los datos (" + esc(err.message) + ").") + "</p>";
+    $("vista").innerHTML = '<p class="empty">' + (location.protocol === "file:" ? t("eq.error.archivo") : t("error.datos", { e: esc(err.message) })) + "</p>";
   });
 })();

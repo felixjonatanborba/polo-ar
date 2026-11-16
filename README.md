@@ -13,11 +13,13 @@ polo-ar/
 ├─ index.html              página
 ├─ css/styles.css          diseño (modo claro y oscuro)
 ├─ js/app.js               arma la página a partir de los JSON
+├─ js/i18n.js              idiomas: textos fijos en español, inglés y portugués
 ├─ data/
 │  ├─ matches.json         partidos
 │  ├─ teams.json           equipos, escudos y planteles
 │  ├─ tournaments.json     Triple Corona y próximos torneos AAP
-│  └─ live.json            partido en vivo (a mano)
+│  ├─ live.json            partido en vivo (a mano)
+│  └─ traducciones.json    traducciones de los textos de los datos
 ├─ assets/crests/          escudos en PNG
 ├─ functions/api/live.js   ruta /api/live para Cloudflare Pages (enganche para datos en vivo)
 ├─ scripts/
@@ -110,6 +112,27 @@ Copiá este bloque al principio de la lista `"partidos"` de `data\matches.json` 
 - `repeticion`: link directo del partido en Disney+. Si es `null`, el botón **Ver repetición** lleva a la página del Abierto en Disney+.
 
 El orden no importa: la página ordena por fecha y agrupa por día.
+
+Si el partido tuvo chukker suplementario, agregalo como noveno valor de `progresion`: la página lo muestra como "Supl.".
+
+### Estadísticas de un partido (opcional)
+
+Si tenés el informe del partido (por ejemplo, los de International Polo Academy que publica la AAP), agregale al partido el campo `"estadisticas"`. Copiá el formato de cualquiera de los partidos de Palermo del 14 y 15/11 en `data\matches.json`:
+
+- `fuente`: quién provee los datos.
+- `equipos`: cada dato es `[local, visitante]`. Tiros, penales y corners van como `"convertidos/intentos"`.
+- `jugadores`: una lista para `local` y otra para `visitante`, con `goles`, `tiros`, `penales`, `pases`, `asistencias`, `faltas`, `recuperos`, `perdidas` y `throwins`.
+
+Sin ese campo, el partido se muestra como siempre.
+
+## Idiomas (español, inglés y portugués)
+
+El selector ES / EN / PT está arriba a la derecha. La elección se guarda en el navegador; también se puede abrir directo con `?lang=en` o `?lang=pt`.
+
+- **Textos fijos de la página** (títulos, botones): están en `js/i18n.js`, cada uno con sus tres versiones.
+- **Textos de los datos** (notas de partidos, fases, nombres de torneos): se cargan en español como siempre y su traducción va en `data\traducciones.json`. La clave es el texto en español copiado tal cual, y el valor la traducción.
+- Si un texto no tiene traducción, se muestra en español. `.\scripts\validar-datos.ps1` avisa cuáles faltan.
+- La política de privacidad está solo en español.
 
 ### Cargar el partido en vivo
 

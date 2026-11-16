@@ -403,3 +403,32 @@ nav a[aria-current="page"]::after { left: 12px; right: 12px; }
 /* Pie */
 .site-footer { border-top: 1px solid var(--line); color: var(--mute); font-size: 13px; padding: 16px 0 32px; }
 .site-footer p { margin: 0 0 6px; }
+
+/* Selector de idioma (ES / EN / PT) */
+.lang { display: inline-flex; flex: none; border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+.lang button {
+  background: var(--panel2); border: 0; border-left: 1px solid var(--line); color: var(--mute);
+  font: 700 12px Barlow, Arial, sans-serif; letter-spacing: .8px; padding: 0 9px; min-height: 34px; cursor: pointer;
+}
+.lang button:first-child { border-left: 0; }
+.lang button:hover { color: var(--accent); }
+.lang button[aria-pressed="true"] { background: var(--accent); color: var(--ink); }
+
+/* Botón del canal de WhatsApp */
+.btn.wa { border-color: #1FA855; color: #1FA855; }
+.btn.wa:hover { background: #1FA855; color: #FFFFFF; }
+
+/* Estadísticas del partido */
+.est { width: 100%; border-collapse: collapse; }
+.est td, .est th { text-align: center; padding: 3px 4px; border-bottom: 1px solid var(--line); }
+.est td { width: 30%; font: 700 16px "Barlow Condensed", Arial, sans-serif; }
+.est tbody th { font-weight: 400; font-size: 13px; color: var(--mute); }
+.est thead th { width: 30%; font: 700 13px "Barlow Condensed", Arial, sans-serif; letter-spacing: .8px; text-transform: uppercase; color: var(--accent); }
+.est-nota { color: var(--mute); font-size: 12px; margin-top: 6px !important; }
+.scrollx { overflow-x: auto; margin-bottom: 8px; }
+.pjs { width: 100%; border-collapse: collapse; font-size: 13px; white-space: nowrap; }
+.pjs th, .pjs td { padding: 3px 6px; text-align: center; border-bottom: 1px solid var(--line); }
+.pjs thead th { color: var(--mute); font-weight: 600; }
+.pjs th:first-child { text-align: left; padding-left: 0; }
+.pjs thead th:first-child { color: var(--accent); text-transform: uppercase; letter-spacing: .8px; }
+.pjs tbody th { font-weight: 400; }

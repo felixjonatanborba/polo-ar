@@ -30,5 +30,26 @@ if ($errores.Count -eq 0) {
     foreach ($k in "local", "visitante") { if ($ids -notcontains $live.partido.$k) { $errores += "live.json: equipo '$($live.partido.$k)' no existe" } }
   }
 }
+# Traducciones (inglés y portugués): avisa qué textos de los datos todavía no tienen traducción.
+# No es un error: lo que falte se muestra en español.
+$trad = Leer "traducciones.json"
+if ($errores.Count -eq 0 -and $trad) {
+  $textos = @()
+  foreach ($p in $partidos.partidos) { $textos += $p.fase; $textos += ($p.fase -split " · ")[0]; $textos += $p.nota }
+  foreach ($e in $teams.equipos) { $textos += $e.nota }
+  foreach ($t in $tour.tripleCorona) { $textos += $t.nombre; $textos += $t.resumen; foreach ($d in $t.destacados) { $textos += $d.texto } }
+  if ($tour.temporada) {
+    $textos += $tour.temporada.formato; $textos += $tour.temporada.fuenteTitulo
+    foreach ($c in $tour.temporada.clasificados) { $textos += $c.nota }
+    if ($tour.temporada.clasificatorio) { $textos += $tour.temporada.clasificatorio.descripcion }
+  }
+  foreach ($x in $tour.proximos) { $textos += $x.categoria }
+  $textos = @($textos | Where-Object { $_ } | Select-Object -Unique)
+  foreach ($idioma in "en", "pt") {
+    $hay = @($trad.$idioma.PSObject.Properties | ForEach-Object { $_.Name })
+    $faltan = @($textos | Where-Object { $hay -cnotcontains $_ })
+    foreach ($f in $faltan) { Write-Host "Aviso: falta la traducción ($idioma) de: $f" -ForegroundColor Yellow }
+  }
+}
 if ($errores.Count) { $errores | ForEach-Object { Write-Host "ERROR  $_" -ForegroundColor Red }; exit 1 }
 Write-Host "Datos OK: $($partidos.partidos.Count) partidos, $($teams.equipos.Count) equipos." -ForegroundColor Green

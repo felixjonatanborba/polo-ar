@@ -13,6 +13,10 @@
   var torneos = { tripleCorona: [], proximos: [] };
   var filtro = "todos";
 
+  // Idiomas: t() traduce textos fijos y d() textos de los datos (ver js/i18n.js).
+  var I = window.PoloI18n || { t: function (k) { return k; }, d: function (s) { return s; }, locale: function () { return "es-AR"; }, listo: function () { return Promise.resolve(); } };
+  var t = I.t, d = I.d;
+
   // ---------- utilidades ----------
   function $(id) { return document.getElementById(id); }
   function esc(s) {
@@ -29,17 +33,17 @@
   function fecha(iso, opts) {
     var p = iso.split("-");
     var d = new Date(+p[0], +p[1] - 1, +p[2]);
-    return d.toLocaleDateString("es-AR", opts || { weekday: "long", day: "numeric", month: "long" });
+    return d.toLocaleDateString(I.locale(), opts || { weekday: "long", day: "numeric", month: "long" });
   }
   function hora(iso) {
     var d = new Date(iso);
     if (isNaN(d)) return "";
-    return d.toLocaleString("es-AR", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit", timeZone: "America/Argentina/Buenos_Aires" });
+    return d.toLocaleString(I.locale(), { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit", timeZone: "America/Argentina/Buenos_Aires" });
   }
   function eq(id) { return equipos[id] || { id: id, nombre: id, escudo: null, jugadores: [] }; }
   function nombreTorneo(id) {
     var t = torneos.tripleCorona.filter(function (x) { return x.id === id; })[0];
-    return t ? t.nombre : id;
+    return t ? d(t.nombre) : id;
   }
   function linkTorneoDisney(id) {
     var t = torneos.tripleCorona.filter(function (x) { return x.id === id; })[0];
@@ -82,9 +86,9 @@
 
   function fila(m, mk) {
     var a = eq(m.local), b = eq(m.visitante);
-    var lectura = a.nombre + " " + (mk.hay ? m.golesLocal : "sin marcador confirmado") + ", " +
+    var lectura = a.nombre + " " + (mk.hay ? m.golesLocal : t("sr.sin.marcador")) + ", " +
       b.nombre + " " + (mk.hay ? m.golesVisitante : "") +
-      (mk.ga ? ". Ganó " + a.nombre : mk.gb ? ". Ganó " + b.nombre : "");
+      (mk.ga ? ". " + t("sr.gano", { e: a.nombre }) : mk.gb ? ". " + t("sr.gano", { e: b.nombre }) : "");
     return '<span class="sr-only">' + esc(lectura) + ".</span>" +
       '<div class="row" aria-hidden="true">' +
         '<div class="tm a' + (mk.ga ? " win" : "") + '">' + escudo(a.id) + '<span class="nm">' + esc(a.nombre) + "</span></div>" +
@@ -96,8 +100,8 @@
   // ---------- detalle ----------
   function plantel(id) {
     var e = eq(id);
-    var h = "<h4>" + esc(e.nombre) + (e.jugadores.length ? " · " + total(e) + " goles de handicap" : "") + "</h4>";
-    if (!e.jugadores.length) return h + '<p class="muted">Plantel sin cargar' + (e.nombreAAP ? " (en la AAP figura como " + esc(e.nombreAAP) + ")" : "") + ".</p>";
+    var h = "<h4>" + esc(e.nombre) + (e.jugadores.length ? " · " + total(e) + " " + t("hcp.goles") : "") + "</h4>";
+    if (!e.jugadores.length) return h + '<p class="muted">' + t("sin.plantel") + (e.nombreAAP ? esc(t("en.aap", { n: e.nombreAAP })) : "") + ".</p>";
     return h + "<ul>" + e.jugadores.map(function (j) {
       return "<li><span>" + esc(j.nombre) + "</span><b>" + esc(j.handicap) + "</b></li>";
     }).join("") + "</ul>";
@@ -105,28 +109,61 @@
   function detalle(m) {
     var a = eq(m.local), b = eq(m.visitante);
     var h = '<div class="det"><div class="cols"><div>' + plantel(m.local) + "</div><div>" + plantel(m.visitante) + "</div></div>";
-    h += "<h4>Marcador por chukker</h4>";
+    h += estadisticasEquipos(m, a, b);
+    h += "<h4>" + t("chukker.marcador") + "</h4>";
     if (m.progresion && m.progresion.length) {
-      h += '<p class="muted">Resultado parcial acumulado (' + esc(a.nombre) + " – " + esc(b.nombre) + ")</p>" +
-        '<ol class="prog">' + m.progresion.map(function (x, i) {
-          return "<li><span>" + (i + 1) + "°</span>" + esc(x) + "</li>";
-        }).join("") + "</ol>";
+      h += '<p class="muted">' + t("parcial") + " (" + esc(a.nombre) + " – " + esc(b.nombre) + ")</p>" +
+        '<ol class="prog">' + m.progresion.map(chukker).join("") + "</ol>";
     } else {
       h += '<p class="muted">—</p>';
     }
-    h += "<h4>Goleadores</h4>";
+    h += "<h4>" + t("goleadores") + "</h4>";
     h += goleadores(m, a, b);
-    if (m.nota) h += "<h4>Notas</h4><p>" + esc(m.nota) + "</p>";
+    h += estadisticasJugadores(m, a, b);
+    if (m.nota) h += "<h4>" + t("notas") + "</h4><p>" + esc(d(m.nota)) + "</p>";
     var yt = idYouTube(m.resumen);
-    if (yt) h += '<h4>Resumen</h4><div class="video"><iframe src="https://www.youtube-nocookie.com/embed/' + yt +
-      '" title="Resumen: ' + esc(a.nombre) + " vs. " + esc(b.nombre) + '" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>';
+    if (yt) h += "<h4>" + t("resumen") + '</h4><div class="video"><iframe src="https://www.youtube-nocookie.com/embed/' + yt +
+      '" title="' + t("resumen") + ": " + esc(a.nombre) + " vs. " + esc(b.nombre) + '" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>';
     return h + "</div>";
+  }
+
+  // Un chukker del marcador parcial. Del noveno en adelante es chukker suplementario.
+  function chukker(x, i) {
+    return "<li><span>" + (i > 7 ? t("supl") : (i + 1) + "°") + "</span>" + esc(x) + "</li>";
+  }
+
+  // ---------- estadísticas del partido (campo "estadisticas" de matches.json) ----------
+  var EST_EQUIPO = ["tiros", "penales", "corners", "faltas", "throwins", "tarjetas"];
+  var EST_JUGADOR = ["tiros", "penales", "pases", "asistencias", "faltas", "recuperos", "perdidas", "throwins"];
+  function estadisticasEquipos(m, a, b) {
+    var e = m.estadisticas && m.estadisticas.equipos;
+    if (!e) return "";
+    var filas = EST_EQUIPO.filter(function (k) { return e[k]; }).map(function (k) {
+      return "<tr><td>" + esc(e[k][0]) + '</td><th scope="row">' + t("est." + k) + "</th><td>" + esc(e[k][1]) + "</td></tr>";
+    }).join("");
+    return "<h4>" + t("est") + '</h4><table class="est"><thead><tr><th scope="col">' + esc(a.nombre) + '</th><td></td><th scope="col">' + esc(b.nombre) +
+      "</th></tr></thead><tbody>" + filas + "</tbody></table>" +
+      (m.estadisticas.fuente ? '<p class="est-nota">' + esc(t("est.fuente", { f: m.estadisticas.fuente })) + "</p>" : "");
+  }
+  function estadisticasJugadores(m, a, b) {
+    var j = m.estadisticas && m.estadisticas.jugadores;
+    if (!j) return "";
+    function tabla(e, filas) {
+      if (!filas || !filas.length) return "";
+      return '<div class="scrollx"><table class="pjs"><thead><tr><th scope="col">' + esc(e.nombre) + '</th><th scope="col">' + t("pj.g") + "</th>" +
+        EST_JUGADOR.map(function (k) { return '<th scope="col">' + t("pj." + k) + "</th>"; }).join("") + "</tr></thead><tbody>" +
+        filas.map(function (p) {
+          return '<tr><th scope="row">' + esc(p.nombre) + "</th><td><b>" + esc(p.goles) + "</b></td>" +
+            EST_JUGADOR.map(function (k) { return "<td>" + esc(p[k]) + "</td>"; }).join("") + "</tr>";
+        }).join("") + "</tbody></table></div>";
+    }
+    return "<h4>" + t("est.jugadores") + "</h4>" + tabla(a, j.local) + tabla(b, j.visitante) + '<p class="est-nota">' + t("pj.leyenda") + "</p>";
   }
 
   function goleadores(m, a, b) {
     var lista = m.goleadores || [];
     if (!lista.length) return '<p class="muted">—</p>';
-    function ul(xs) { return "<ul>" + xs.map(function (g) { return "<li><span>" + esc(g.nombre) + "</span><b>" + esc(g.goles) + "</b></li>"; }).join("") + "</ul>"; }
+    function ul(xs) { return "<ul>" + xs.map(function (g) { return "<li><span>" + esc(d(g.nombre)) + "</span><b>" + esc(g.goles) + "</b></li>"; }).join("") + "</ul>"; }
     var hayEquipo = lista.some(function (g) { return g.equipo; });
     if (!hayEquipo) return ul(lista);
     var col = function (lado, e) {
@@ -142,32 +179,32 @@
   }
   function botonResumen(m) {
     if (!m.resumen) return "";
-    return '<a class="btn yt" href="' + esc(m.resumen) + '" target="_blank" rel="noopener">▶ Ver resumen<span class="sr-only"> (YouTube, se abre en otra pestaña)</span></a>';
+    return '<a class="btn yt" href="' + esc(m.resumen) + '" target="_blank" rel="noopener">' + t("ver.resumen") + '<span class="sr-only">' + t("yt.otra") + "</span></a>";
   }
 
   function botonRepeticion(m) {
     var directo = !!m.repeticion;
     var url = m.repeticion || linkTorneoDisney(m.torneo);
     return '<a class="btn t" href="' + esc(url) + '" target="_blank" rel="noopener">' +
-      "▶ Ver repetición" + (directo ? "" : " <small>(página del Abierto en Disney+)</small>") +
-      '<span class="sr-only"> (se abre en otra pestaña)</span></a>';
+      t("ver.repeticion") + (directo ? "" : " <small>" + t("pagina.abierto") + "</small>") +
+      '<span class="sr-only">' + t("otra.pestana") + "</span></a>";
   }
 
   // ---------- resultados ----------
   function dibujarResultados() {
     var lista = partidos.filter(function (m) { return filtro === "todos" || m.torneo === filtro; })
       .slice().sort(function (x, y) { return x.fecha < y.fecha ? 1 : x.fecha > y.fecha ? -1 : 0; });
-    if (!lista.length) { $("lista").innerHTML = '<p class="empty">No hay partidos cargados para este torneo.</p>'; return; }
+    if (!lista.length) { $("lista").innerHTML = '<p class="empty">' + t("sin.partidos") + "</p>"; return; }
     var ult = "", h = "";
     lista.forEach(function (m) {
       if (m.fecha !== ult) {
         ult = m.fecha;
-        h += '<h3 class="day">' + esc(fecha(m.fecha)) + (m.fechaAproximada ? ' <span class="badge" title="Fecha deducida de la fecha de las notas">aprox.</span>' : "") + "</h3>";
+        h += '<h3 class="day">' + esc(fecha(m.fecha)) + (m.fechaAproximada ? ' <span class="badge" title="' + esc(t("aprox.titulo")) + '">' + t("aprox") + "</span>" : "") + "</h3>";
       }
       var mk = marcador(m);
       h += '<article class="match" id="' + esc(m.id) + '"><details><summary>' + fila(m, mk) +
-        '<div class="inf"><span>' + esc(nombreTorneo(m.torneo)) + " · " + esc(m.fase) + "</span>" +
-        '<span aria-hidden="true" class="chev">▾</span><span class="sr-only">Ver detalle</span></div>' +
+        '<div class="inf"><span>' + esc(nombreTorneo(m.torneo)) + " · " + esc(d(m.fase)) + "</span>" +
+        '<span aria-hidden="true" class="chev">▾</span><span class="sr-only">' + t("ver.detalle") + "</span></div>" +
         "</summary>" + detalle(m) + "</details>" +
         '<div class="acts">' + botonRepeticion(m) + botonResumen(m) + "</div></article>";
     });
@@ -197,52 +234,51 @@
     $("tri").innerHTML = torneos.tripleCorona.slice().sort(function (a, b) { return a.orden - b.orden; }).map(function (t) {
       var on = t.estado === "en juego";
       var filas = "";
-      if (t.campeon) filas += linea(t.campeon, "campeón") + linea(t.subcampeon, "subcampeón");
-      (t.destacados || []).forEach(function (d) { filas += linea(d.equipo, d.texto); });
+      if (t.campeon) filas += linea(t.campeon, I.t("campeon")) + linea(t.subcampeon, I.t("subcampeon"));
+      (t.destacados || []).forEach(function (x) { filas += linea(x.equipo, d(x.texto)); });
       var ft = t.foto, estilo = "", cred = "";
       if (ft && ft.url) {
         estilo = ' style="--foto:url(&quot;' + esc(ft.url) + '&quot;)"';
-        cred = '<div class="cred">' + (ft.ilustrativa ? "Foto ilustrativa · " : "Foto: ") +
+        cred = '<div class="cred">' + (ft.ilustrativa ? I.t("foto.ilustrativa") : I.t("foto")) +
           '<a href="' + esc(ft.fuente) + '" target="_blank" rel="noopener">' + esc(ft.autor) + "</a> · " + esc(ft.licencia) + "</div>";
       }
-      return '<article class="tc' + (on ? " on" : "") + (ft ? " foto" : "") + '"' + estilo + '><div class="n"><span>Triple Corona 2026 · ' + t.orden + "</span>" +
-        (on ? '<span class="badge">En juego</span>' : "") + "</div>" +
-        "<h3>" + esc(t.nombre) + "</h3>" + filas + '<div class="s">' + esc(t.resumen) + "</div>" + cred + "</article>";
+      return '<article class="tc' + (on ? " on" : "") + (ft ? " foto" : "") + '"' + estilo + '><div class="n"><span>' + I.t("triple") + " · " + t.orden + "</span>" +
+        (on ? '<span class="badge">' + I.t("en.juego") + "</span>" : "") + "</div>" +
+        "<h3>" + esc(d(t.nombre)) + "</h3>" + filas + '<div class="s">' + esc(d(t.resumen)) + "</div>" + cred + "</article>";
     }).join("");
     function linea(id, txt) { return '<div class="l">' + escudo(id, true) + "<span>" + esc(eq(id).nombre) + " <small>" + esc(txt) + "</small></span></div>"; }
   }
 
   // ---------- temporada (formato, fechas y clasificados) ----------
   function dibujarTemporada() {
-    var t = torneos.temporada;
-    if (!t) { $("temporada").hidden = true; return; }
-    var corta = { day: "numeric", month: "short" };
+    var tp = torneos.temporada;
+    if (!tp) { $("temporada").hidden = true; return; }
+    var corta = { day: "numeric", month: "short" }, larga = { day: "numeric", month: "long" };
     function f(x) { return fecha(x, corta).replace(".", ""); }
-    var h = '<div class="temp"><p>' + esc(t.formato) + "</p>" +
-      "<p>" + esc(t.partidos) + " partidos del " + esc(fecha(t.desde, { day: "numeric", month: "long" })) +
-      " al " + esc(fecha(t.hasta, { day: "numeric", month: "long" })) +
-      (t.partidosAnterior ? " (" + (t.partidos - t.partidosAnterior) + " más que en 2025)." : ".") + "</p>";
+    var h = '<div class="temp"><p>' + esc(d(tp.formato)) + "</p>" +
+      "<p>" + esc(t("temp.partidos", { n: tp.partidos, a: fecha(tp.desde, larga), b: fecha(tp.hasta, larga) })) +
+      (tp.partidosAnterior ? esc(t("temp.mas", { n: tp.partidos - tp.partidosAnterior })) : ".") + "</p>";
 
-    h += '<h3>Calendario</h3><table class="tabla"><thead><tr><th scope="col">Torneo</th><th scope="col">Desde</th><th scope="col">Final programada</th></tr></thead><tbody>' +
+    h += "<h3>" + t("calendario") + '</h3><table class="tabla"><thead><tr><th scope="col">' + t("col.torneo") + '</th><th scope="col">' + t("col.desde") + '</th><th scope="col">' + t("col.final") + "</th></tr></thead><tbody>" +
       torneos.tripleCorona.slice().sort(function (a, b) { return a.orden - b.orden; }).map(function (c) {
-        return "<tr><td>" + esc(c.nombre) + (c.copa ? "<small>" + esc(c.copa) + "</small>" : "") + "</td><td>" +
+        return "<tr><td>" + esc(d(c.nombre)) + (c.copa ? "<small>" + esc(c.copa) + "</small>" : "") + "</td><td>" +
           (c.inicio ? esc(f(c.inicio)) : "—") + "</td><td>" + (c.finalProgramada ? esc(f(c.finalProgramada)) : "—") + "</td></tr>";
       }).join("") + "</tbody></table>";
 
-    h += '<h3>Clasificados</h3><table class="tabla"><thead><tr><th scope="col">Equipo</th><th scope="col" class="num">HCP</th></tr></thead><tbody>' +
-      t.clasificados.map(function (c) {
+    h += "<h3>" + t("clasificados") + '</h3><table class="tabla"><thead><tr><th scope="col">' + t("col.equipo") + '</th><th scope="col" class="num">HCP</th></tr></thead><tbody>' +
+      tp.clasificados.map(function (c) {
         var cr = c.equipo ? escudo(c.equipo, true) : '<span class="cr sm" aria-hidden="true">' + esc(iniciales(c.nombre)) + "</span>";
-        return '<tr><td><span class="eqc">' + cr + "<span>" + esc(c.nombre) + (c.nota ? "<small>" + esc(c.nota) + "</small>" : "") +
+        return '<tr><td><span class="eqc">' + cr + "<span>" + esc(c.nombre) + (c.nota ? "<small>" + esc(d(c.nota)) + "</small>" : "") +
           '</span></span></td><td class="num">' + esc(c.handicap) + "</td></tr>";
       }).join("") + "</tbody></table>";
 
-    var q = t.clasificatorio;
+    var q = tp.clasificatorio;
     if (q) {
-      h += "<h3>Clasificatorio · " + esc(q.nombre) + "</h3><p>" + esc(q.descripcion) +
-        (q.fechas && q.fechas.length ? " Fechas: " + q.fechas.map(f).map(esc).join(", ") + "." : "") + "</p>" +
+      h += "<h3>" + t("clasificatorio") + " · " + esc(q.nombre) + "</h3><p>" + esc(d(q.descripcion)) +
+        (q.fechas && q.fechas.length ? t("fechas") + q.fechas.map(f).map(esc).join(", ") + "." : "") + "</p>" +
         '<ul class="chips">' + q.equipos.map(function (e) { return "<li>" + esc(e) + "</li>"; }).join("") + "</ul>";
     }
-    if (t.fuente) h += '<p class="fuente">Fuente: <a href="' + esc(t.fuente) + '" target="_blank" rel="noopener">' + esc(t.fuenteTitulo || t.fuente) + '<span class="sr-only"> (se abre en otra pestaña)</span></a></p>';
+    if (tp.fuente) h += '<p class="fuente">' + t("fuente") + '<a href="' + esc(tp.fuente) + '" target="_blank" rel="noopener">' + esc(d(tp.fuenteTitulo) || tp.fuente) + '<span class="sr-only">' + t("otra.pestana") + "</span></a></p>";
     $("info-temporada").innerHTML = h + "</div>";
   }
 
@@ -252,8 +288,8 @@
       .sort(function (a, b) { return total(b) - total(a) || a.nombre.localeCompare(b.nombre, "es"); });
     $("lista-equipos").innerHTML = lista.map(function (e) {
       return '<a class="team-link" href="equipos.html?id=' + encodeURIComponent(e.id) + '">' + escudo(e.id, true) + "<b>" + esc(e.nombre) + "</b>" +
-        (e.jugadores.length ? "<em>" + total(e) + ' <small>HCP</small></em>' : '<em aria-label="sin plantel">—</em>') + "</a>";
-    }).join("") + '<a class="ver-todos" href="equipos.html">Ver fichas de equipos →</a>';
+        (e.jugadores.length ? "<em>" + total(e) + ' <small>HCP</small></em>' : '<em aria-label="' + esc(t("sin.plantel.aria")) + '">—</em>') + "</a>";
+    }).join("") + '<a class="ver-todos" href="equipos.html">' + t("ver.fichas") + "</a>";
   }
 
   // ---------- próximos torneos ----------
@@ -261,7 +297,7 @@
     $("calendario").innerHTML = torneos.proximos.map(function (c) {
       return '<li><span class="d">' + esc(fecha(c.fecha, { day: "numeric", month: "short" }).replace(".", "")) + "</span><span>" +
         '<a href="https://www.aapolo.com/torneos/detalle/' + encodeURIComponent(c.aapId) + '" target="_blank" rel="noopener">' + esc(c.nombre) +
-        '<span class="sr-only"> (se abre en otra pestaña)</span></a><br><small>' + esc(c.categoria) + "</small></span></li>";
+        '<span class="sr-only">' + t("otra.pestana") + "</span></a><br><small>" + esc(d(c.categoria)) + "</small></span></li>";
     }).join("");
   }
 
@@ -270,12 +306,13 @@
   function cargarVivo() {
     return getJSON(VIVO_API).catch(function () { return getJSON(DATOS + "live.json"); })
       .then(dibujarVivo)
-      .catch(function () { $("vivo").innerHTML = '<p class="empty">No se pudo cargar el bloque en vivo.</p>'; });
+      .catch(function () { $("vivo").innerHTML = '<p class="empty">' + t("vivo.error") + "</p>"; });
   }
   function dibujarVivo(v) {
     var links = v.links || {};
     var m = v.partido;
     var dot = document.querySelector("#vivo-titulo .dot");
+    var otra = '<span class="sr-only">' + t("otra.pestana") + "</span>";
     var h = '<div class="lv">';
     if (m) {
       var mk = marcador(m);
@@ -283,22 +320,23 @@
         '<div class="tm a">' + escudo(m.local, true) + '<span class="nm">' + esc(eq(m.local).nombre) + "</span></div>" +
         '<div class="sc">' + mk.txt + "</div>" +
         '<div class="tm b"><span class="nm">' + esc(eq(m.visitante).nombre) + "</span>" + escudo(m.visitante, true) + "</div></div>" +
-        '<div class="meta"><span>' + esc(nombreTorneo(m.torneo)) + (m.fase ? " · " + esc(m.fase) : "") + "</span><span>" +
+        '<div class="meta"><span>' + esc(nombreTorneo(m.torneo)) + (m.fase ? " · " + esc(d(m.fase)) : "") + "</span><span>" +
         (m.chukker ? "Chukker " + esc(m.chukker) : "") + "</span></div>" +
-        (m.progresion && m.progresion.length ? '<ol class="prog" style="margin-top:8px">' + m.progresion.map(function (x, i) { return "<li><span>" + (i + 1) + "°</span>" + esc(x) + "</li>"; }).join("") + "</ol>" : "") +
-        (m.nota ? '<p style="margin:8px 0 0">' + esc(m.nota) + "</p>" : "") +
+        (m.progresion && m.progresion.length ? '<ol class="prog" style="margin-top:8px">' + m.progresion.map(chukker).join("") + "</ol>" : "") +
+        (m.nota ? '<p style="margin:8px 0 0">' + esc(d(m.nota)) + "</p>" : "") +
         "</div>";
       if (dot) dot.classList.add("on");
     } else {
-      h += "<p>Ahora no hay un partido en vivo cargado. Los marcadores se actualizan a mano: mirá los partidos en directo y sus repeticiones en Disney+.</p>";
+      h += "<p>" + t("vivo.nada") + "</p>";
       if (dot) dot.classList.remove("on");
     }
     h += '<div class="acts">' +
-      '<a class="btn t" href="' + esc((m && m.transmision) || links.disney || linkTorneoDisney("palermo")) + '" target="_blank" rel="noopener">▶ Ver en Disney+<span class="sr-only"> (se abre en otra pestaña)</span></a>' +
-      (links.aap ? '<a class="btn" href="' + esc(links.aap) + '" target="_blank" rel="noopener">AAP Live<span class="sr-only"> (se abre en otra pestaña)</span></a>' : "") +
-      (links.youtube ? '<a class="btn yt" href="' + esc(links.youtube) + '" target="_blank" rel="noopener">▶ Resúmenes en YouTube<span class="sr-only"> (se abre en otra pestaña)</span></a>' : "") +
+      '<a class="btn t" href="' + esc((m && m.transmision) || links.disney || linkTorneoDisney("palermo")) + '" target="_blank" rel="noopener">' + t("vivo.disney") + otra + "</a>" +
+      (links.aap ? '<a class="btn" href="' + esc(links.aap) + '" target="_blank" rel="noopener">AAP Live' + otra + "</a>" : "") +
+      (links.youtube ? '<a class="btn yt" href="' + esc(links.youtube) + '" target="_blank" rel="noopener">' + t("vivo.youtube") + otra + "</a>" : "") +
+      (links.whatsapp ? '<a class="btn wa" href="' + esc(links.whatsapp) + '" target="_blank" rel="noopener">' + t("vivo.whatsapp") + otra + "</a>" : "") +
       "</div>";
-    if (v.actualizado) h += '<p class="upd">Actualizado: ' + esc(hora(v.actualizado)) + " (hora argentina)</p>";
+    if (v.actualizado) h += '<p class="upd">' + esc(t("vivo.actualizado", { h: hora(v.actualizado) })) + "</p>";
     $("vivo").innerHTML = h + "</div>";
 
     clearTimeout(timerVivo);
@@ -312,7 +350,7 @@
       var t = r.getAttribute("data-theme");
       return t ? t === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
     }
-    function etiqueta() { b.setAttribute("aria-label", oscuro() ? "Cambiar a modo claro" : "Cambiar a modo oscuro"); }
+    function etiqueta() { b.setAttribute("aria-label", oscuro() ? I.t("tema.claro") : I.t("tema.oscuro")); }
     b.addEventListener("click", function () {
       var nuevo = oscuro() ? "light" : "dark";
       r.setAttribute("data-theme", nuevo);
@@ -336,7 +374,7 @@
       document.querySelectorAll(".ad[data-espacio]").forEach(function (box) {
         var slot = (a.espacios || {})[box.getAttribute("data-espacio")];
         if (!slot) return;
-        box.innerHTML = '<span class="ad-label">Publicidad</span><ins class="adsbygoogle" style="display:block" data-ad-client="' +
+        box.innerHTML = '<span class="ad-label">' + t("publicidad") + '</span><ins class="adsbygoogle" style="display:block" data-ad-client="' +
           esc(a.cliente) + '" data-ad-slot="' + esc(slot) + '" data-ad-format="auto" data-full-width-responsive="true"></ins>';
         box.hidden = false;
         try { (window.adsbygoogle = window.adsbygoogle || []).push({}); } catch (e) {}
@@ -347,7 +385,7 @@
   // ---------- arranque ----------
   prepararTema();
   prepararAnuncios();
-  Promise.all([getJSON(DATOS + "teams.json"), getJSON(DATOS + "matches.json"), getJSON(DATOS + "tournaments.json")])
+  Promise.all([getJSON(DATOS + "teams.json"), getJSON(DATOS + "matches.json"), getJSON(DATOS + "tournaments.json"), I.listo()])
     .then(function (r) {
       r[0].equipos.forEach(function (e) { equipos[e.id] = e; });
       partidos = r[1].partidos;
@@ -361,8 +399,8 @@
     })
     .catch(function (err) {
       var msg = location.protocol === "file:"
-        ? "Abriste el archivo con doble clic. Para que carguen los datos, iniciá el servidor local: en PowerShell, dentro de la carpeta, corré <code>.\\iniciar.ps1</code>."
-        : "No se pudieron cargar los datos (" + esc(err.message) + "). Revisá que los archivos de data/ sean JSON válido.";
+        ? t("error.archivo")
+        : t("error.datos", { e: esc(err.message) });
       $("lista").innerHTML = '<p class="empty">' + msg + "</p>";
       $("tri").innerHTML = "";
       $("vivo").innerHTML = "";

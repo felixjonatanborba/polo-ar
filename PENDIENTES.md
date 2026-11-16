@@ -4,7 +4,8 @@ Datos hasta el 15/11/2026. Todo lo que figura acá se muestra en la página con 
 
 ## Datos sin confirmar
 
-- [ ] Palermo, 15/11: faltan marcador por chukker y goleadores de Híper vs. La Aguada y Las Monjitas vs. La Zeta.
+- [x] Palermo, 14 y 15/11: marcador por chukker, goleadores y estadísticas cargados desde los informes de International Polo Academy (16/11/2026).
+- [ ] Traducciones al inglés y al portugués (16/11/2026): las hizo Claude; conviene que las revise alguien que domine cada idioma. La política de privacidad quedó solo en español.
 - [ ] Fechas aproximadas: semifinal La Hache vs. Ellerstina de Hurlingham (26 o 27/9); Tortugas zona B del 1/11 (Las Monjitas vs. La Hache y La Irenita vs. La Aguada; puede ser 31/10).
 - [ ] Tortugas, La Hache vs. La Irenita (18/10): 18-12 según La Nación y Alternativa en Papel, 19-12 según Pololine. Figura 18-12.
 - [ ] Tortugas, La Zeta Kazak 14-11 La Ensenada (19/10): un solo medio lo confirma.

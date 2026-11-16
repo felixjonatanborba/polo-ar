@@ -12,8 +12,41 @@
       "golesLocal": 12,
       "golesVisitante": 15,
       "ganador": "visitante",
-      "progresion": [],
-      "goleadores": [],
+      "progresion": ["1-1", "1-3", "4-4", "6-6", "8-6", "9-9", "11-12", "12-15"],
+      "goleadores": [
+        { "nombre": "V. Ruiz Jorba", "goles": 5, "equipo": "local" },
+        { "nombre": "F. Elizalde", "goles": 4, "equipo": "local" },
+        { "nombre": "G. Ferrari", "goles": 3, "equipo": "local" },
+        { "nombre": "J. Pittaluga", "goles": 6, "equipo": "visitante" },
+        { "nombre": "A. Bigatti", "goles": 4, "equipo": "visitante" },
+        { "nombre": "I. Laprida", "goles": 3, "equipo": "visitante" },
+        { "nombre": "B. Bayugar", "goles": 2, "equipo": "visitante" }
+      ],
+      "estadisticas": {
+        "fuente": "International Polo Academy (IPA)",
+        "equipos": {
+          "tiros": ["8/21", "10/19"],
+          "penales": ["4/6", "4/5"],
+          "corners": ["0/0", "0/2"],
+          "faltas": [9, 13],
+          "throwins": [17, 14],
+          "tarjetas": [1, 0]
+        },
+        "jugadores": {
+          "local": [
+            { "nombre": "Victorino Ruiz Jorba", "goles": 5, "tiros": "1/3", "penales": "4/6", "pases": "11/24", "asistencias": 1, "faltas": 1, "recuperos": 14, "perdidas": 12, "throwins": 4 },
+            { "nombre": "Gonzalo Ferrari", "goles": 3, "tiros": "3/8", "penales": "0/0", "pases": "12/34", "asistencias": 1, "faltas": 5, "recuperos": 32, "perdidas": 14, "throwins": 1 },
+            { "nombre": "Francisco Elizalde", "goles": 4, "tiros": "4/7", "penales": "0/0", "pases": "18/35", "asistencias": 1, "faltas": 1, "recuperos": 37, "perdidas": 11, "throwins": 3 },
+            { "nombre": "Teodoro Lacau", "goles": 0, "tiros": "0/3", "penales": "0/0", "pases": "19/45", "asistencias": 1, "faltas": 2, "recuperos": 37, "perdidas": 16, "throwins": 9 }
+          ],
+          "visitante": [
+            { "nombre": "Bautista Bayugar", "goles": 2, "tiros": "2/3", "penales": "0/0", "pases": "13/29", "asistencias": 0, "faltas": 4, "recuperos": 27, "perdidas": 15, "throwins": 2 },
+            { "nombre": "Alfredo Bigatti", "goles": 4, "tiros": "3/4", "penales": "0/0", "pases": "15/40", "asistencias": 1, "faltas": 2, "recuperos": 30, "perdidas": 20, "throwins": 3 },
+            { "nombre": "Ignacio Laprida", "goles": 3, "tiros": "3/7", "penales": "0/0", "pases": "18/41", "asistencias": 1, "faltas": 7, "recuperos": 35, "perdidas": 23, "throwins": 5 },
+            { "nombre": "Joaquín Pittaluga", "goles": 6, "tiros": "2/5", "penales": "4/5", "pases": "29/49", "asistencias": 2, "faltas": 0, "recuperos": 28, "perdidas": 6, "throwins": 4 }
+          ]
+        }
+      },
       "nota": "Primera victoria de La Aguada en la Triple Corona 2026: había perdido sus cuatro partidos de Tortugas.",
       "repeticion": null,
       "resumen": "https://www.youtube.com/watch?v=uWNJJPJVKfQ"
@@ -29,8 +62,41 @@
       "golesLocal": 12,
       "golesVisitante": 13,
       "ganador": "visitante",
-      "progresion": [],
-      "goleadores": [],
+      "progresion": ["3-0", "5-1", "5-4", "7-5", "8-7", "10-9", "10-12", "12-13"],
+      "goleadores": [
+        { "nombre": "R. Bensadón", "goles": 6, "equipo": "local" },
+        { "nombre": "L. Monteverde (n.)", "goles": 3, "equipo": "local" },
+        { "nombre": "I. du Plessis", "goles": 2, "equipo": "local" },
+        { "nombre": "J. M. Nero", "goles": 1, "equipo": "local" },
+        { "nombre": "L. Chavanne", "goles": 8, "equipo": "visitante" },
+        { "nombre": "G. Caset (h.)", "goles": 3, "equipo": "visitante" },
+        { "nombre": "N. Pieres", "goles": 2, "equipo": "visitante" }
+      ],
+      "estadisticas": {
+        "fuente": "International Polo Academy (IPA)",
+        "equipos": {
+          "tiros": ["7/23", "9/17"],
+          "penales": ["3/4", "4/4"],
+          "corners": ["0/0", "0/0"],
+          "faltas": [12, 9],
+          "throwins": [12, 17],
+          "tarjetas": [1, 1]
+        },
+        "jugadores": {
+          "local": [
+            { "nombre": "Rufino Bensadón", "goles": 6, "tiros": "3/9", "penales": "3/4", "pases": "14/24", "asistencias": 1, "faltas": 4, "recuperos": 24, "perdidas": 24, "throwins": 2 },
+            { "nombre": "Lucas Monteverde (n.)", "goles": 3, "tiros": "2/6", "penales": "0/0", "pases": "11/34", "asistencias": 1, "faltas": 4, "recuperos": 35, "perdidas": 19, "throwins": 5 },
+            { "nombre": "Juan Martín Nero", "goles": 1, "tiros": "1/5", "penales": "0/0", "pases": "14/36", "asistencias": 2, "faltas": 1, "recuperos": 27, "perdidas": 11, "throwins": 1 },
+            { "nombre": "Ignatius du Plessis", "goles": 2, "tiros": "1/3", "penales": "0/0", "pases": "20/53", "asistencias": 1, "faltas": 3, "recuperos": 42, "perdidas": 15, "throwins": 4 }
+          ],
+          "visitante": [
+            { "nombre": "Guillermo Caset (h.)", "goles": 3, "tiros": "3/7", "penales": "0/0", "pases": "12/29", "asistencias": 1, "faltas": 2, "recuperos": 18, "perdidas": 12, "throwins": 1 },
+            { "nombre": "Beltrán Laulhé", "goles": 0, "tiros": "0/1", "penales": "0/0", "pases": "18/37", "asistencias": 1, "faltas": 2, "recuperos": 32, "perdidas": 17, "throwins": 6 },
+            { "nombre": "Lorenzo Chavanne", "goles": 8, "tiros": "4/6", "penales": "4/4", "pases": "25/42", "asistencias": 2, "faltas": 4, "recuperos": 42, "perdidas": 22, "throwins": 6 },
+            { "nombre": "Nicolás Pieres", "goles": 2, "tiros": "2/3", "penales": "0/0", "pases": "27/57", "asistencias": 0, "faltas": 1, "recuperos": 33, "perdidas": 19, "throwins": 4 }
+          ]
+        }
+      },
       "nota": "La Zeta Kazak, que llegó desde el clasificatorio, le ganó a Las Monjitas (35 de handicap) en su debut en Palermo. Las Monjitas jugó con Ignatius du Plessis en lugar de David Stirling.",
       "repeticion": null,
       "resumen": "https://www.youtube.com/watch?v=M4p5KMbJFXg"
@@ -46,8 +112,42 @@
       "golesLocal": 13,
       "golesVisitante": 14,
       "ganador": "visitante",
-      "progresion": [],
-      "goleadores": [],
+      "progresion": ["2-0", "4-2", "5-3", "6-6", "7-8", "8-10", "9-13", "13-13", "13-14"],
+      "goleadores": [
+        { "nombre": "J. M. Zubía", "goles": 5, "equipo": "local" },
+        { "nombre": "D. Cavanagh", "goles": 4, "equipo": "local" },
+        { "nombre": "J. Britos", "goles": 3, "equipo": "local" },
+        { "nombre": "J. del Carril", "goles": 1, "equipo": "local" },
+        { "nombre": "Pablo Pieres", "goles": 6, "equipo": "visitante" },
+        { "nombre": "Pablo Mac Donough", "goles": 5, "equipo": "visitante" },
+        { "nombre": "P. de Narváez", "goles": 2, "equipo": "visitante" },
+        { "nombre": "M. Mac Donough (h.)", "goles": 1, "equipo": "visitante" }
+      ],
+      "estadisticas": {
+        "fuente": "International Polo Academy (IPA)",
+        "equipos": {
+          "tiros": ["10/19", "13/23"],
+          "penales": ["1/2", "1/2"],
+          "corners": ["0/0", "0/1"],
+          "faltas": [3, 5],
+          "throwins": [17, 12],
+          "tarjetas": [0, 0]
+        },
+        "jugadores": {
+          "local": [
+            { "nombre": "Diego Cavanagh", "goles": 4, "tiros": "4/8", "penales": "0/0", "pases": "13/20", "asistencias": 1, "faltas": 1, "recuperos": 22, "perdidas": 17, "throwins": 4 },
+            { "nombre": "Juan Britos", "goles": 3, "tiros": "2/4", "penales": "0/0", "pases": "13/26", "asistencias": 2, "faltas": 1, "recuperos": 26, "perdidas": 10, "throwins": 4 },
+            { "nombre": "Juan Martín Zubía", "goles": 5, "tiros": "4/6", "penales": "0/0", "pases": "17/47", "asistencias": 0, "faltas": 0, "recuperos": 30, "perdidas": 19, "throwins": 6 },
+            { "nombre": "Jerónimo del Carril", "goles": 1, "tiros": "0/1", "penales": "1/2", "pases": "22/46", "asistencias": 1, "faltas": 1, "recuperos": 31, "perdidas": 11, "throwins": 3 }
+          ],
+          "visitante": [
+            { "nombre": "Pablo Pieres", "goles": 6, "tiros": "5/13", "penales": "1/1", "pases": "12/31", "asistencias": 1, "faltas": 2, "recuperos": 25, "perdidas": 14, "throwins": 5 },
+            { "nombre": "Paco de Narváez", "goles": 2, "tiros": "2/3", "penales": "0/0", "pases": "12/25", "asistencias": 1, "faltas": 1, "recuperos": 34, "perdidas": 20, "throwins": 3 },
+            { "nombre": "Pablo Mac Donough", "goles": 5, "tiros": "5/5", "penales": "0/0", "pases": "18/37", "asistencias": 0, "faltas": 2, "recuperos": 28, "perdidas": 8, "throwins": 2 },
+            { "nombre": "Matías Mac Donough (h.)", "goles": 1, "tiros": "1/2", "penales": "0/1", "pases": "31/47", "asistencias": 3, "faltas": 0, "recuperos": 22, "perdidas": 13, "throwins": 2 }
+          ]
+        }
+      },
       "nota": "La Irenita entró al 8° chukker ganando 13-9, La Ensenada hizo un parcial de 4-0 y llevó el partido a un chukker extra, donde Polito Pieres definió con gol de oro tras un pase de Vizcacha Mac Donough.",
       "repeticion": "https://www.disneyplus.com/es-mx/browse/entity-49160284-469b-473b-8250-370fab4df14f",
       "resumen": "https://www.youtube.com/watch?v=-XbEPFzYBXc"
@@ -73,7 +173,41 @@
         "16-10",
         "16-14"
       ],
-      "goleadores": [],
+      "goleadores": [
+        { "nombre": "B. Panelo", "goles": 7, "equipo": "local" },
+        { "nombre": "C. M. Ulloa", "goles": 4, "equipo": "local" },
+        { "nombre": "H. Ulloa", "goles": 3, "equipo": "local" },
+        { "nombre": "T. Panelo", "goles": 2, "equipo": "local" },
+        { "nombre": "P. Zacharias", "goles": 7, "equipo": "visitante" },
+        { "nombre": "F. Llosa", "goles": 6, "equipo": "visitante" },
+        { "nombre": "F. Vercellino", "goles": 1, "equipo": "visitante" }
+      ],
+      "estadisticas": {
+        "fuente": "International Polo Academy (IPA)",
+        "equipos": {
+          "tiros": ["11/22", "5/15"],
+          "penales": ["5/6", "8/9"],
+          "corners": ["0/1", "1/1"],
+          "faltas": [13, 8],
+          "throwins": [25, 4],
+          "tarjetas": [0, 2]
+        },
+        "jugadores": {
+          "local": [
+            { "nombre": "Hilario Ulloa", "goles": 3, "tiros": "3/7", "penales": "0/0", "pases": "16/26", "asistencias": 2, "faltas": 3, "recuperos": 19, "perdidas": 20, "throwins": 4 },
+            { "nombre": "Carlos María Ulloa", "goles": 4, "tiros": "4/6", "penales": "0/0", "pases": "17/32", "asistencias": 1, "faltas": 7, "recuperos": 30, "perdidas": 13, "throwins": 7 },
+            { "nombre": "Benjamín Panelo", "goles": 7, "tiros": "2/3", "penales": "5/6", "pases": "15/40", "asistencias": 1, "faltas": 1, "recuperos": 24, "perdidas": 13, "throwins": 7 },
+            { "nombre": "Tomás Panelo", "goles": 2, "tiros": "2/5", "penales": "0/0", "pases": "16/29", "asistencias": 3, "faltas": 1, "recuperos": 25, "perdidas": 8, "throwins": 5 },
+            { "nombre": "Joaquín Panelo (s.)", "goles": 0, "tiros": "0/1", "penales": "0/0", "pases": "9/14", "asistencias": 0, "faltas": 1, "recuperos": 9, "perdidas": 6, "throwins": 2 }
+          ],
+          "visitante": [
+            { "nombre": "Facundo Llosa", "goles": 6, "tiros": "1/2", "penales": "5/5", "pases": "14/28", "asistencias": 1, "faltas": 0, "recuperos": 32, "perdidas": 11, "throwins": 1 },
+            { "nombre": "Kristos Magrini", "goles": 0, "tiros": "0/2", "penales": "0/0", "pases": "8/18", "asistencias": 1, "faltas": 3, "recuperos": 23, "perdidas": 19, "throwins": 0 },
+            { "nombre": "Pedro Zacharias", "goles": 7, "tiros": "4/9", "penales": "2/2", "pases": "11/25", "asistencias": 0, "faltas": 4, "recuperos": 26, "perdidas": 10, "throwins": 1 },
+            { "nombre": "Felipe Vercellino", "goles": 1, "tiros": "0/2", "penales": "1/2", "pases": "21/49", "asistencias": 0, "faltas": 1, "recuperos": 33, "perdidas": 10, "throwins": 2 }
+          ]
+        }
+      },
       "nota": "La Hache ganaba 12-3, pero desde el 5° chukker Don Ercole hizo un parcial de 11-4 (4-0 en el último). Tomás Panelo salió lesionado del cuello y lo reemplazó su hermano Joaquín. Goles de Don Ercole: Zacharias 7, Llosa 6 y Vercellino 1.",
       "repeticion": "https://www.disneyplus.com/es-mx/browse/entity-2e1b05bd-d484-41b4-a76a-6368998f1839",
       "resumen": "https://www.youtube.com/watch?v=gpy1xT3uIr8"

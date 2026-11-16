@@ -1,4 +1,4 @@
-﻿﻿# Polo AR · servidor local sin instalar nada (Windows PowerShell 5.1 o PowerShell 7).
+﻿# Polo AR · servidor local sin instalar nada (Windows PowerShell 5.1 o PowerShell 7).
 # Uso, desde la carpeta del proyecto:   .\iniciar.ps1          (puerto 8080)
 #                                         .\iniciar.ps1 -Puerto 5500
 # También podés hacer doble clic en iniciar.bat.
