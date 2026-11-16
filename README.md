@@ -132,6 +132,17 @@ En `data\live.json`, reemplazá `"partido": null` por:
 
 y actualizá `"actualizado"`. Mientras haya partido, la página vuelve a leer el archivo cada 60 segundos. Al terminar, pasá el resultado a `matches.json` y volvé a poner `"partido": null`.
 
+### Fotos de jugadores
+
+Usá solo fotos propias o con permiso del jugador o del club (las de diarios, la AAP o Disney+ tienen derechos de autor).
+
+1. Guardá la foto en `assets/jugadores/`, por ejemplo `assets/jugadores/hilario-ulloa.jpg`. Conviene que sea cuadrada, de unos 400×400, con la cara arriba al centro.
+2. En `data/teams.json`, agregale al jugador la línea `"foto"`:
+   ```json
+   { "nombre": "Hilario Ulloa", "handicap": 9, "foto": "assets/jugadores/hilario-ulloa.jpg" }
+   ```
+Si no tiene foto o el archivo no está, se muestran las iniciales.
+
 ### Equipos y próximos torneos
 
 - Planteles: `data\teams.json`, lista `jugadores` (`nombre` y `handicap`). El handicap total se calcula solo.

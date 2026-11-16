@@ -1,5 +1,5 @@
 {
-  "_ayuda": "Planteles 2026. 'escudo' es la ruta del PNG (null = se muestran iniciales). 'escudoFondoClaro': true si el logo es oscuro. 'jugadores' vacío = plantel sin cargar.",
+  "_ayuda": "Planteles 2026. 'escudo' es la ruta del PNG (null = se muestran iniciales). 'escudoFondoClaro': true si el logo es oscuro. 'jugadores' vacío = plantel sin cargar. Cada jugador puede tener 'foto' con la ruta de una imagen propia o con permiso (por ejemplo assets/jugadores/hilario-ulloa.jpg); sin foto se ven las iniciales.",
   "equipos": [
     {
       "id": "la-natividad-la-dolfina",

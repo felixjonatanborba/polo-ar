@@ -37,6 +37,9 @@
   }
   document.addEventListener("error", function (ev) {
     var img = ev.target;
+    if (img.tagName === "IMG" && img.parentNode && img.parentNode.classList.contains("pl-avatar")) {
+      var a = img.parentNode; a.classList.remove("con-foto"); a.textContent = a.getAttribute("data-ini"); return;
+    }
     if (img.tagName === "IMG" && img.parentNode && img.parentNode.classList.contains("cr")) {
       var s = img.parentNode; s.classList.remove("lt"); s.textContent = s.getAttribute("data-ini");
     }
@@ -112,7 +115,10 @@
     h += '<section class="card"><h2 class="card-title">Plantel</h2>';
     if (e.jugadores.length) {
       h += '<div class="pl-grid">' + e.jugadores.map(function (j) {
-        return '<div class="pl-card"><span class="pl-avatar" aria-hidden="true">' + esc(iniciales(j.nombre)) + '</span><div class="pl-nombre">' + esc(j.nombre) +
+        var av = j.foto
+          ? '<span class="pl-avatar con-foto" data-ini="' + esc(iniciales(j.nombre)) + '"><img src="' + esc(j.foto) + '" alt="" loading="lazy"></span>'
+          : '<span class="pl-avatar" aria-hidden="true">' + esc(iniciales(j.nombre)) + "</span>";
+        return '<div class="pl-card">' + av + '<div class="pl-nombre">' + esc(j.nombre) +
           '</div><div class="pl-hcp"><b>' + esc(j.handicap) + "</b> handicap</div></div>";
       }).join("") + "</div>";
     } else {

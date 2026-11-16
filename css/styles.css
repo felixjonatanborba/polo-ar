@@ -354,7 +354,9 @@ nav a[aria-current="page"]::after { left: 12px; right: 12px; }
   .st { min-width: 0; flex: 1 1 40%; }
 }
 .pl-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 12px; padding: 16px; }
-@media (max-width: 640px) { .pl-grid { grid-template-columns: 1fr 1fr; gap: 10px; padding: 12px; } .pl-avatar { width: 58px; height: 58px; font-size: 20px; } .pl-nombre { font-size: 17px; } }
+@media (max-width: 640px) { .pl-grid { grid-template-columns: 1fr 1fr; gap: 10px; padding: 12px; } .pl-avatar { width: 58px; height: 58px; font-size: 20px; } .pl-avatar.con-foto { overflow: hidden; padding: 0; }
+.pl-avatar.con-foto img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.pl-nombre { font-size: 17px; } }
 .pl-card { background: var(--panel2); border: 1px solid var(--line); border-radius: 6px; padding: 18px 14px; text-align: center; }
 .pl-avatar {
   display: inline-flex; align-items: center; justify-content: center; width: 74px; height: 74px; border-radius: 50%;
