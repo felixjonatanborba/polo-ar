@@ -251,10 +251,9 @@
     var lista = Object.keys(equipos).map(function (k) { return equipos[k]; })
       .sort(function (a, b) { return total(b) - total(a) || a.nombre.localeCompare(b.nombre, "es"); });
     $("lista-equipos").innerHTML = lista.map(function (e) {
-      return "<details><summary>" + escudo(e.id, true) + "<b>" + esc(e.nombre) + "</b>" +
-        (e.jugadores.length ? "<em>" + total(e) + ' <small>HCP</small></em>' : '<em aria-label="sin plantel">—</em>') +
-        '</summary><div class="det">' + plantel(e.id) + (e.nota ? '<p class="muted">' + esc(e.nota) + "</p>" : "") + "</div></details>";
-    }).join("");
+      return '<a class="team-link" href="equipos.html?id=' + encodeURIComponent(e.id) + '">' + escudo(e.id, true) + "<b>" + esc(e.nombre) + "</b>" +
+        (e.jugadores.length ? "<em>" + total(e) + ' <small>HCP</small></em>' : '<em aria-label="sin plantel">—</em>') + "</a>";
+    }).join("") + '<a class="ver-todos" href="equipos.html">Ver fichas de equipos →</a>';
   }
 
   // ---------- próximos torneos ----------
