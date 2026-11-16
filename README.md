@@ -175,3 +175,6 @@ La página ya pide primero `/api/live` y, si no existe, usa `data/live.json`. Cu
 ## Publicar
 
 Ver la sección de publicación en `PUBLICAR.md`.
+
+Última revisión: 16 de noviembre de 2026.
+
