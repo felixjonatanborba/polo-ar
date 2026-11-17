@@ -11,7 +11,7 @@ function Leer($nombre) {
   catch { $script:errores += "$nombre no es JSON válido: $($_.Exception.Message)"; return $null }
 }
 
-$teams = Leer "teams.json"; $partidos = Leer "matches.json"; $tour = Leer "tournaments.json"; $live = Leer "live.json"
+$teams = Leer "teams.json"; $partidos = Leer "matches.json"; $tour = Leer "tournaments.json"; $live = Leer "live.json"; $prox = Leer "proximos.json"
 if ($errores.Count -eq 0) {
   $ids = @($teams.equipos | ForEach-Object { $_.id })
   $torneos = @($tour.tripleCorona | ForEach-Object { $_.id })
@@ -26,6 +26,14 @@ if ($errores.Count -eq 0) {
     if ($torneos -notcontains $p.torneo) { $errores += "$($p.id): torneo '$($p.torneo)' no existe en tournaments.json" }
     if ($p.fecha -notmatch '^\d{4}-\d{2}-\d{2}$') { $errores += "$($p.id): la fecha debe ser AAAA-MM-DD" }
   }
+  foreach ($p in $prox.partidos) {
+    if ($vistos.ContainsKey($p.id)) { $errores += "proximos.json: id repetido: $($p.id)" } else { $vistos[$p.id] = 1 }
+    if ($ids -notcontains $p.local) { $errores += "proximos.json $($p.id): equipo local '$($p.local)' no existe en teams.json" }
+    if ($ids -notcontains $p.visitante) { $errores += "proximos.json $($p.id): equipo visitante '$($p.visitante)' no existe en teams.json" }
+    if ($torneos -notcontains $p.torneo) { $errores += "proximos.json $($p.id): torneo '$($p.torneo)' no existe en tournaments.json" }
+    if ($p.fecha -notmatch '^\d{4}-\d{2}-\d{2}$') { $errores += "proximos.json $($p.id): la fecha debe ser AAAA-MM-DD" }
+    if ($p.hora -and $p.hora -notmatch '^\d{2}:\d{2}$') { $errores += "proximos.json $($p.id): la hora debe ser HH:MM" }
+  }
   if ($live.partido) {
     foreach ($k in "local", "visitante") { if ($ids -notcontains $live.partido.$k) { $errores += "live.json: equipo '$($live.partido.$k)' no existe" } }
   }
@@ -35,7 +43,7 @@ if ($errores.Count -eq 0) {
 $trad = Leer "traducciones.json"
 if ($errores.Count -eq 0 -and $trad) {
   $textos = @()
-  foreach ($p in $partidos.partidos) { $textos += $p.fase; $textos += ($p.fase -split " · ")[0]; $textos += $p.nota }
+  foreach ($p in @($partidos.partidos) + @($prox.partidos)) { $textos += $p.fase; $textos += ($p.fase -split " · ")[0]; $textos += $p.nota }
   foreach ($e in $teams.equipos) { $textos += $e.nota }
   foreach ($t in $tour.tripleCorona) { $textos += $t.nombre; $textos += $t.resumen; foreach ($d in $t.destacados) { $textos += $d.texto } }
   if ($tour.temporada) {

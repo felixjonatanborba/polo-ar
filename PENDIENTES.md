@@ -24,6 +24,11 @@ Datos hasta el 15/11/2026. Todo lo que figura acá se muestra en la página con 
 - [ ] Correr `.\scripts\extraer-escudos.ps1` con `polo-argentino.html` en la carpeta (ver README). Hasta entonces se ven iniciales.
 - [x] Escudo de **Ellerstina-Indios Chapaleufú** cargado (16/11/2026). (La Natividad-La Dolfina usa el logo de La Dolfina.)
 
+## Próximos partidos
+
+- [ ] Palermo, miércoles 18/11 (Las Monjitas vs. La Aguada y Ellerstina vs. La Zeta Kazak): falta confirmar en qué cancha se juega cada uno.
+- [ ] Cargar el fixture de las fechas siguientes en `data/proximos.json` cuando lo publique la AAP.
+
 ## Partidos sin cargar
 
 - [ ] Partido por el subcampeonato / copa subsidiaria de Hurlingham (La Ensenada 17 vs. La Aguada).

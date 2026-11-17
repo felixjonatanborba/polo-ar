@@ -16,6 +16,7 @@ polo-ar/
 ├─ js/i18n.js              idiomas: textos fijos en español, inglés y portugués
 ├─ data/
 │  ├─ matches.json         partidos
+│  ├─ proximos.json        próximos partidos (fixture)
 │  ├─ teams.json           equipos, escudos y planteles
 │  ├─ tournaments.json     Triple Corona y próximos torneos AAP
 │  ├─ live.json            partido en vivo (a mano)
@@ -114,6 +115,28 @@ Copiá este bloque al principio de la lista `"partidos"` de `data\matches.json` 
 El orden no importa: la página ordena por fecha y agrupa por día.
 
 Si el partido tuvo chukker suplementario, agregalo como noveno valor de `progresion`: la página lo muestra como "Supl.".
+
+### Próximos partidos
+
+La sección **Próximos partidos** (al lado de Resultados en el menú) sale de `data\proximos.json`. Para agregar uno, copiá un bloque de la lista `"partidos"` y completalo:
+
+```json
+{
+  "id": "pal-2026-f5-natividad-hache",
+  "torneo": "palermo",
+  "fecha": "2026-11-21",
+  "hora": "16:30",
+  "fase": "Zona A · Fecha 5",
+  "local": "la-natividad-la-dolfina",
+  "visitante": "la-hache",
+  "cancha": 1
+}
+```
+
+- `hora`: hora de Argentina (`HH:MM`), o `null` si no está confirmada.
+- `cancha`: número, o `null` (se muestra "Cancha a confirmar").
+- Cuando empieza, el horario cambia a "En juego". El partido desaparece solo 3 horas después, o apenas lo cargues con resultado en `matches.json` (mismos equipos y misma fecha). No hace falta borrarlo, pero conviene limpiar la lista cada tanto.
+- Si usás una `fase` nueva, agregá su traducción en `data\traducciones.json`.
 
 ### Estadísticas de un partido (opcional)
 

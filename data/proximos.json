@@ -1,0 +1,45 @@
+{
+  "_ayuda": "Partidos programados que todavía no se jugaron. Un objeto por partido. torneo: palermo | tortugas | hurlingham. fecha: AAAA-MM-DD. hora: HH:MM en hora de Argentina, o null si no está confirmada. cancha: número o null (se muestra 'a confirmar'). Cada partido desaparece solo 3 horas después de empezar, o antes si ya está cargado con resultado en matches.json (mismos equipos y fecha). Cuando termine, pasalo a matches.json.",
+  "partidos": [
+    {
+      "id": "pal-2026-f3-natividad-ercole",
+      "torneo": "palermo",
+      "fecha": "2026-11-17",
+      "hora": "14:00",
+      "fase": "Zona A · Fecha 3",
+      "local": "la-natividad-la-dolfina",
+      "visitante": "don-ercole",
+      "cancha": 2
+    },
+    {
+      "id": "pal-2026-f3-hache-irenita",
+      "torneo": "palermo",
+      "fecha": "2026-11-17",
+      "hora": "16:30",
+      "fase": "Zona A · Fecha 3",
+      "local": "la-hache",
+      "visitante": "la-irenita",
+      "cancha": 1
+    },
+    {
+      "id": "pal-2026-f4-monjitas-aguada",
+      "torneo": "palermo",
+      "fecha": "2026-11-18",
+      "hora": "14:00",
+      "fase": "Zona B · Fecha 4",
+      "local": "las-monjitas",
+      "visitante": "la-aguada",
+      "cancha": null
+    },
+    {
+      "id": "pal-2026-f4-ellerstina-zeta",
+      "torneo": "palermo",
+      "fecha": "2026-11-18",
+      "hora": "16:30",
+      "fase": "Zona B · Fecha 4",
+      "local": "ellerstina-indios-chapaleufu",
+      "visitante": "la-zeta",
+      "cancha": null
+    }
+  ]
+}

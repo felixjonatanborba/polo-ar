@@ -10,6 +10,7 @@
 
   var equipos = {};                   // id -> equipo
   var partidos = [];
+  var proximos = [];
   var torneos = { tripleCorona: [], proximos: [] };
   var filtro = "todos";
 
@@ -229,6 +230,42 @@
     aplicar(q && document.querySelector('#filtros [data-f="' + q + '"]') ? q : "todos");
   }
 
+  // ---------- próximos partidos (data/proximos.json) ----------
+  // Se ocultan 3 horas después de empezar, o antes si el partido ya está en matches.json.
+  var DURACION_MS = 3 * 3600000;
+  var timerProximos = null;
+  function inicio(p) {
+    return Date.parse(p.fecha + "T" + (p.hora || "23:59") + ":00-03:00");
+  }
+  function yaJugado(p) {
+    return partidos.some(function (m) { return m.fecha === p.fecha && m.local === p.local && m.visitante === p.visitante; });
+  }
+  function dibujarProximos() {
+    var ahora = Date.now();
+    var lista = proximos.filter(function (p) { return !yaJugado(p) && inicio(p) + DURACION_MS > ahora; })
+      .sort(function (x, y) { return inicio(x) - inicio(y); });
+    if (!lista.length) { $("lista-proximos").innerHTML = '<p class="empty">' + t("sin.proximos") + "</p>"; return; }
+    var ult = "", h = "";
+    lista.forEach(function (p) {
+      if (p.fecha !== ult) { ult = p.fecha; h += '<h3 class="day">' + esc(fecha(p.fecha)) + "</h3>"; }
+      var a = eq(p.local), b = eq(p.visitante);
+      var enJuego = p.hora && inicio(p) <= ahora;
+      var cuando = enJuego ? t("en.juego") : (p.hora || "—");
+      var cancha = p.cancha != null ? t("cancha", { n: p.cancha }) : t("cancha.confirmar");
+      h += '<article class="match prox' + (enJuego ? " on" : "") + '" id="' + esc(p.id) + '">' +
+        '<span class="sr-only">' + esc(t("sr.proximo", { a: a.nombre, b: b.nombre, h: p.hora || t("hora.confirmar") })) + ".</span>" +
+        '<div class="row" aria-hidden="true">' +
+          '<div class="tm a">' + escudo(a.id) + '<span class="nm">' + esc(a.nombre) + "</span></div>" +
+          '<div class="sc">' + esc(cuando) + "</div>" +
+          '<div class="tm b"><span class="nm">' + esc(b.nombre) + "</span>" + escudo(b.id) + "</div>" +
+        "</div>" +
+        '<div class="inf"><span>' + esc(nombreTorneo(p.torneo)) + " · " + esc(d(p.fase)) + " · " + esc(cancha) + "</span></div></article>";
+    });
+    $("lista-proximos").innerHTML = h + '<p class="nota-hora">' + t("hora.arg") + "</p>";
+    clearTimeout(timerProximos);
+    timerProximos = setTimeout(dibujarProximos, 60000);
+  }
+
   // ---------- triple corona ----------
   function dibujarTriple() {
     $("tri").innerHTML = torneos.tripleCorona.slice().sort(function (a, b) { return a.orden - b.orden; }).map(function (t) {
@@ -385,13 +422,16 @@
   // ---------- arranque ----------
   prepararTema();
   prepararAnuncios();
-  Promise.all([getJSON(DATOS + "teams.json"), getJSON(DATOS + "matches.json"), getJSON(DATOS + "tournaments.json"), I.listo()])
+  Promise.all([getJSON(DATOS + "teams.json"), getJSON(DATOS + "matches.json"), getJSON(DATOS + "tournaments.json"), I.listo(),
+      getJSON(DATOS + "proximos.json").catch(function () { return { partidos: [] }; })])
     .then(function (r) {
       r[0].equipos.forEach(function (e) { equipos[e.id] = e; });
       partidos = r[1].partidos;
       torneos = r[2];
+      proximos = r[4].partidos || [];
       dibujarTriple();
       prepararFiltros();
+      dibujarProximos();
       dibujarTemporada();
       dibujarEquipos();
       dibujarCalendario();
@@ -403,6 +443,7 @@
         : t("error.datos", { e: esc(err.message) });
       $("lista").innerHTML = '<p class="empty">' + msg + "</p>";
       $("tri").innerHTML = "";
+      $("lista-proximos").innerHTML = "";
       $("vivo").innerHTML = "";
     });
 })();
