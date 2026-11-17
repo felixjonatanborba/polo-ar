@@ -2,6 +2,23 @@
   "_ayuda": "Un objeto por partido. torneo: palermo | tortugas | hurlingham. fecha: AAAA-MM-DD. fechaAproximada: true si no está confirmada. golesLocal/golesVisitante: null = sin confirmar (se muestra '—'). ganador: 'local' | 'visitante' | null (se usa si no hay goles). progresion: resultado acumulado local-visitante al final de cada chukker. goleadores: {nombre, goles, equipo: 'local' | 'visitante'}. repeticion: link directo a Disney+ o null (usa la página del torneo). resumen: link opcional a un video de YouTube con el resumen del partido.",
   "partidos": [
     {
+      "id": "pal-2026-f3-lnld-ercole",
+      "torneo": "palermo",
+      "fecha": "2026-11-17",
+      "fechaAproximada": false,
+      "fase": "Zona A · Fecha 3",
+      "local": "la-natividad-la-dolfina",
+      "visitante": "don-ercole",
+      "golesLocal": 25,
+      "golesVisitante": 8,
+      "ganador": "local",
+      "progresion": [],
+      "goleadores": [],
+      "nota": "Debut de La Natividad-La Dolfina en Palermo: 21° triunfo seguido. Segunda derrota de Don Ercole en el torneo.",
+      "repeticion": null,
+      "resumen": null
+    },
+    {
       "id": "pal-2026-f2-hiper-aguada",
       "torneo": "palermo",
       "fecha": "2026-11-15",

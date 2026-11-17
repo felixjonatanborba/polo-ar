@@ -54,6 +54,10 @@
       "resumen": "Final programada el 12 de diciembre · Campo Argentino de Polo",
       "destacados": [
         {
+          "equipo": "la-natividad-la-dolfina",
+          "texto": "ganó su debut"
+        },
+        {
           "equipo": "la-irenita",
           "texto": "ganó su debut"
         },
