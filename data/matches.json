@@ -354,6 +354,23 @@
       "resumen": "https://www.youtube.com/watch?v=Vk01bb-H57I"
     },
     {
+      "id": "tor-2026-za-zeta-ercole",
+      "torneo": "tortugas",
+      "fecha": "2026-10-31",
+      "fechaAproximada": false,
+      "fase": "Zona A",
+      "local": "la-zeta",
+      "visitante": "don-ercole",
+      "golesLocal": 19,
+      "golesVisitante": 10,
+      "ganador": "local",
+      "progresion": [],
+      "goleadores": [],
+      "nota": null,
+      "repeticion": null,
+      "resumen": "https://www.youtube.com/watch?v=4aidSIY1-2s"
+    },
+    {
       "id": "tor-2026-za-lnld-ellerstina",
       "torneo": "tortugas",
       "fecha": "2026-10-31",
