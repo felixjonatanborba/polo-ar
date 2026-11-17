@@ -2,16 +2,6 @@
   "_ayuda": "Partidos programados que todavía no se jugaron. Un objeto por partido. torneo: palermo | tortugas | hurlingham. fecha: AAAA-MM-DD. hora: HH:MM en hora de Argentina, o null si no está confirmada. cancha: número o null (se muestra 'a confirmar'). Mientras se juega (desde la hora y durante 2 h 30 min) aparece solo en En vivo. Desaparece de la lista 2 h 30 min después de empezar, o antes si ya está cargado con resultado en matches.json (mismos equipos y fecha). Cuando termine, pasalo a matches.json.",
   "partidos": [
     {
-      "id": "pal-2026-f3-hache-irenita",
-      "torneo": "palermo",
-      "fecha": "2026-11-17",
-      "hora": "16:30",
-      "fase": "Zona A · Fecha 3",
-      "local": "la-hache",
-      "visitante": "la-irenita",
-      "cancha": 1
-    },
-    {
       "id": "pal-2026-f4-monjitas-aguada",
       "torneo": "palermo",
       "fecha": "2026-11-18",

@@ -2,6 +2,25 @@
   "_ayuda": "Un objeto por partido. torneo: palermo | tortugas | hurlingham. fecha: AAAA-MM-DD. fechaAproximada: true si no está confirmada. golesLocal/golesVisitante: null = sin confirmar (se muestra '—'). ganador: 'local' | 'visitante' | null (se usa si no hay goles). progresion: resultado acumulado local-visitante al final de cada chukker. goleadores: {nombre, goles, equipo: 'local' | 'visitante'}. repeticion: link directo a Disney+ o null (usa la página del torneo). resumen: link opcional a un video de YouTube con el resumen del partido.",
   "partidos": [
     {
+      "id": "pal-2026-f3-hache-irenita",
+      "torneo": "palermo",
+      "fecha": "2026-11-17",
+      "fechaAproximada": false,
+      "fase": "Zona A · Fecha 3",
+      "local": "la-hache",
+      "visitante": "la-irenita",
+      "golesLocal": 17,
+      "golesVisitante": 15,
+      "ganador": "local",
+      "progresion": [],
+      "goleadores": [
+        { "nombre": "B. Panelo", "goles": 8, "equipo": "local" }
+      ],
+      "nota": "Con 8 goles de Benjamín Panelo, La Hache le quitó el invicto a La Irenita y quedó como único líder de la Zona A, con dos triunfos en dos partidos.",
+      "repeticion": null,
+      "resumen": null
+    },
+    {
       "id": "pal-2026-f3-lnld-ercole",
       "torneo": "palermo",
       "fecha": "2026-11-17",
