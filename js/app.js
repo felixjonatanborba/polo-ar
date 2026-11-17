@@ -231,14 +231,28 @@
   }
 
   // ---------- próximos partidos (data/proximos.json) ----------
-  // Se ocultan 3 horas después de empezar, o antes si el partido ya está en matches.json.
-  var DURACION_MS = 3 * 3600000;
+  // Se ocultan 2 h 30 min después de empezar (lo que dura un partido con margen, y el
+  // intervalo habitual entre partidos del mismo día), o antes si ya está en matches.json.
+  var DURACION_MS = 2.5 * 3600000;
   var timerProximos = null;
   function inicio(p) {
     return Date.parse(p.fecha + "T" + (p.hora || "23:59") + ":00-03:00");
   }
   function yaJugado(p) {
     return partidos.some(function (m) { return m.fecha === p.fecha && m.local === p.local && m.visitante === p.visitante; });
+  }
+  // El próximo partido que ya empezó y no terminó (el más reciente si hay más de uno).
+  function proximoEnJuego() {
+    var ahora = Date.now();
+    return proximos.filter(function (p) { return p.hora && !yaJugado(p) && inicio(p) <= ahora && inicio(p) + DURACION_MS > ahora; })
+      .sort(function (x, y) { return inicio(y) - inicio(x); })[0] || null;
+  }
+  // Milisegundos hasta que empiece el siguiente partido programado (o null si no hay).
+  function faltaParaElSiguiente() {
+    var ahora = Date.now();
+    var fut = proximos.filter(function (p) { return p.hora && !yaJugado(p) && inicio(p) > ahora; })
+      .map(function (p) { return inicio(p) - ahora; });
+    return fut.length ? Math.min.apply(null, fut) : null;
   }
   function dibujarProximos() {
     var ahora = Date.now();
@@ -348,6 +362,12 @@
   function dibujarVivo(v) {
     var links = v.links || {};
     var m = v.partido;
+    // Sin partido cargado a mano: se muestra solo el de "Próximos partidos" que se está jugando.
+    var auto = m ? null : proximoEnJuego();
+    if (auto) {
+      m = { torneo: auto.torneo, fase: auto.fase, local: auto.local, visitante: auto.visitante,
+        golesLocal: null, golesVisitante: null, transmision: auto.transmision || null };
+    }
     var dot = document.querySelector("#vivo-titulo .dot");
     var otra = '<span class="sr-only">' + t("otra.pestana") + "</span>";
     var h = '<div class="lv">';
@@ -355,10 +375,12 @@
       var mk = marcador(m);
       h += '<div class="live-match"><div class="row">' +
         '<div class="tm a">' + escudo(m.local, true) + '<span class="nm">' + esc(eq(m.local).nombre) + "</span></div>" +
-        '<div class="sc">' + mk.txt + "</div>" +
+        '<div class="sc">' + (auto ? "vs" : mk.txt) + "</div>" +
         '<div class="tm b"><span class="nm">' + esc(eq(m.visitante).nombre) + "</span>" + escudo(m.visitante, true) + "</div></div>" +
         '<div class="meta"><span>' + esc(nombreTorneo(m.torneo)) + (m.fase ? " · " + esc(d(m.fase)) : "") + "</span><span>" +
-        (m.chukker ? "Chukker " + esc(m.chukker) : "") + "</span></div>" +
+        (auto ? esc(t("vivo.empezo", { h: auto.hora })) + (auto.cancha != null ? " · " + esc(t("cancha", { n: auto.cancha })) : "")
+          : m.chukker ? "Chukker " + esc(m.chukker) : "") + "</span></div>" +
+        (auto ? '<p class="muted" style="margin:8px 0 0;font-size:13px">' + t("vivo.sin.marcador") + "</p>" : "") +
         (m.progresion && m.progresion.length ? '<ol class="prog" style="margin-top:8px">' + m.progresion.map(chukker).join("") + "</ol>" : "") +
         (m.nota ? '<p style="margin:8px 0 0">' + esc(d(m.nota)) + "</p>" : "") +
         "</div>";
@@ -373,11 +395,14 @@
       (links.youtube ? '<a class="btn yt" href="' + esc(links.youtube) + '" target="_blank" rel="noopener">' + t("vivo.youtube") + otra + "</a>" : "") +
       (links.whatsapp ? '<a class="btn wa" href="' + esc(links.whatsapp) + '" target="_blank" rel="noopener">' + t("vivo.whatsapp") + otra + "</a>" : "") +
       "</div>";
-    if (v.actualizado) h += '<p class="upd">' + esc(t("vivo.actualizado", { h: hora(v.actualizado) })) + "</p>";
+    if (v.actualizado && !auto) h += '<p class="upd">' + esc(t("vivo.actualizado", { h: hora(v.actualizado) })) + "</p>";
     $("vivo").innerHTML = h + "</div>";
 
+    // Con partido (a mano o automático) se refresca cada minuto. Sin partido, se vuelve a
+    // mirar cuando empieza el siguiente de "Próximos partidos" (como mucho cada 30 min).
     clearTimeout(timerVivo);
-    if (m) timerVivo = setTimeout(cargarVivo, VIVO_CADA_MS);
+    var espera = m ? VIVO_CADA_MS : faltaParaElSiguiente();
+    if (espera != null) timerVivo = setTimeout(cargarVivo, Math.min(Math.max(espera + 1000, 5000), 1800000));
   }
 
   // ---------- tema ----------

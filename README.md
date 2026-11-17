@@ -135,7 +135,7 @@ La sección **Próximos partidos** (al lado de Resultados en el menú) sale de `
 
 - `hora`: hora de Argentina (`HH:MM`), o `null` si no está confirmada.
 - `cancha`: número, o `null` (se muestra "Cancha a confirmar").
-- Cuando empieza, el horario cambia a "En juego". El partido desaparece solo 3 horas después, o apenas lo cargues con resultado en `matches.json` (mismos equipos y misma fecha). No hace falta borrarlo, pero conviene limpiar la lista cada tanto.
+- Cuando empieza, el horario cambia a "En juego". El partido desaparece solo 2 horas y media después, o apenas lo cargues con resultado en `matches.json` (mismos equipos y misma fecha). No hace falta borrarlo, pero conviene limpiar la lista cada tanto.
 - Si usás una `fase` nueva, agregá su traducción en `data\traducciones.json`.
 
 ### Estadísticas de un partido (opcional)
@@ -158,6 +158,10 @@ El selector ES / EN / PT está arriba a la derecha. La elección se guarda en el
 - La política de privacidad está solo en español.
 
 ### Cargar el partido en vivo
+
+**Automático:** mientras se juega un partido de `data\proximos.json` (desde su `hora` y durante 2 horas y media), el bloque **En vivo** lo muestra solo, sin marcador y con el botón a Disney+. No hace falta tocar nada.
+
+**A mano (con marcador):** si querés mostrar el resultado parcial, cargalo en `live.json`; eso tiene prioridad sobre el automático.
 
 En `data\live.json`, reemplazá `"partido": null` por:
 

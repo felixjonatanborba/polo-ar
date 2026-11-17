@@ -157,6 +157,8 @@ window.PoloI18n = (function () {
       "There is no live match at the moment. Scores are updated by hand: watch the matches live and their replays on Disney+.",
       "Não há partida ao vivo no momento. Os placares são atualizados manualmente: assista às partidas ao vivo e aos replays no Disney+."
     ],
+    "vivo.empezo": ["Empezó a las {h}", "Started at {h}", "Começou às {h}"],
+    "vivo.sin.marcador": ["El marcador en vivo no está disponible acá: miralo en Disney+.", "The live score isn't available here: watch it on Disney+.", "O placar ao vivo não está disponível aqui: veja no Disney+."],
     "vivo.disney": ["▶ Ver en Disney+", "▶ Watch on Disney+", "▶ Ver no Disney+"],
     "vivo.youtube": ["▶ Resúmenes en YouTube", "▶ Highlights on YouTube", "▶ Melhores momentos no YouTube"],
     "vivo.whatsapp": ["Canal AAP en WhatsApp", "AAP WhatsApp channel", "Canal da AAP no WhatsApp"],
