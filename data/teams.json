@@ -28,7 +28,7 @@
     {
       "id": "ellerstina-indios-chapaleufu",
       "nombre": "Ellerstina-Indios Chapaleufú",
-      "escudo": null,
+      "escudo": "assets/crests/ellerstina-indios-chapaleufu.png",
       "escudoFondoClaro": false,
       "jugadores": [
         {

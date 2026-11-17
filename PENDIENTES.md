@@ -22,7 +22,7 @@ Datos hasta el 15/11/2026. Todo lo que figura acá se muestra en la página con 
 ## Escudos
 
 - [ ] Correr `.\scripts\extraer-escudos.ps1` con `polo-argentino.html` en la carpeta (ver README). Hasta entonces se ven iniciales.
-- [ ] Falta el escudo de **Ellerstina-Indios Chapaleufú**. (La Natividad-La Dolfina usa el logo de La Dolfina.)
+- [x] Escudo de **Ellerstina-Indios Chapaleufú** cargado (16/11/2026). (La Natividad-La Dolfina usa el logo de La Dolfina.)
 
 ## Partidos sin cargar
 
