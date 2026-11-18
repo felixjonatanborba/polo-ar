@@ -27,7 +27,6 @@ window.PoloI18n = (function () {
     "nav.proximos": ["Próximos partidos", "Upcoming matches", "Próximas partidas"],
     "nav.vivo": ["En vivo", "Live", "Ao vivo"],
     "nav.equipos": ["Equipos", "Teams", "Equipes"],
-    "nav.temporada": ["Temporada", "Season", "Temporada"],
     "nav.torneos": ["Torneos", "Tournaments", "Torneios"],
     "logo.aria": ["PoloAR, inicio", "PoloAR, home", "PoloAR, início"],
     "saltar.resultados": ["Saltar a los resultados", "Skip to results", "Pular para os resultados"],
