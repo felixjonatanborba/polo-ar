@@ -140,7 +140,7 @@ La sección **Próximos partidos** (al lado de Resultados en el menú) sale de `
 
 ### Estadísticas de un partido (opcional)
 
-Si tenés el informe del partido (por ejemplo, los de International Polo Academy que publica la AAP), agregale al partido el campo `"estadisticas"`. Copiá el formato de cualquiera de los partidos de Palermo del 14 y 15/11 en `data\matches.json`:
+Si tenés el informe del partido (por ejemplo, los de International Polo Academy que publica la AAP en [esta carpeta de Google Drive](https://drive.google.com/drive/folders/1SSIhqe71EU86R6kltVuqtW3zHWHb7mfi)), agregale al partido el campo `"estadisticas"`. Copiá el formato de cualquiera de los partidos de Palermo del 14 y 15/11 en `data\matches.json`:
 
 - `fuente`: quién provee los datos.
 - `equipos`: cada dato es `[local, visitante]`. Tiros, penales y corners van como `"convertidos/intentos"`.
