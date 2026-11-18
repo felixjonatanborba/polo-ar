@@ -103,7 +103,6 @@ window.PoloI18n = (function () {
     "ver.resumen": ["▶ Ver resumen", "▶ Watch highlights", "▶ Ver melhores momentos"],
     "yt.otra": [" (YouTube, se abre en otra pestaña)", " (YouTube, opens in a new tab)", " (YouTube, abre em outra aba)"],
     "ver.repeticion": ["▶ Ver repetición", "▶ Watch replay", "▶ Ver replay"],
-    "pagina.abierto": ["(página del Abierto en Disney+)", "(Argentine Open page on Disney+)", "(página do Aberto no Disney+)"],
 
     // estadísticas del partido
     "est": ["Estadísticas", "Statistics", "Estatísticas"],

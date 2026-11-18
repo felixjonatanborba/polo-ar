@@ -184,10 +184,9 @@
   }
 
   function botonRepeticion(m) {
-    var directo = !!m.repeticion;
     var url = m.repeticion || linkTorneoDisney(m.torneo);
     return '<a class="btn t" href="' + esc(url) + '" target="_blank" rel="noopener">' +
-      t("ver.repeticion") + (directo ? "" : " <small>" + t("pagina.abierto") + "</small>") +
+      t("ver.repeticion") +
       '<span class="sr-only">' + t("otra.pestana") + "</span></a>";
   }
 
