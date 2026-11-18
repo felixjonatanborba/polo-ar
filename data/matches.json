@@ -2,6 +2,22 @@
   "_ayuda": "Un objeto por partido. torneo: palermo | tortugas | hurlingham. fecha: AAAA-MM-DD. fechaAproximada: true si no está confirmada. golesLocal/golesVisitante: null = sin confirmar (se muestra '—'). ganador: 'local' | 'visitante' | null (se usa si no hay goles). progresion: resultado acumulado local-visitante al final de cada chukker. goleadores: {nombre, goles, equipo: 'local' | 'visitante'}. repeticion: link directo a Disney+ o null (usa la página del torneo). resumen: link opcional a un video de YouTube con el resumen del partido.",
   "partidos": [
     {
+      "id": "pal-2026-f4-ellerstina-zeta",
+      "torneo": "palermo",
+      "fecha": "2026-11-18",
+      "fechaAproximada": false,
+      "fase": "Zona B · Fecha 4",
+      "local": "ellerstina-indios-chapaleufu",
+      "visitante": "la-zeta",
+      "golesLocal": 16,
+      "golesVisitante": 17,
+      "ganador": "visitante",
+      "progresion": [],
+      "goleadores": [],
+      "nota": "En el debut de Ellerstina-Indios Chapaleufú en Palermo, La Zeta Kazak le ganó por un gol y quedó como único líder de la Zona B, con dos triunfos en dos partidos. En Tortugas había perdido 18-10 con Ellerstina.",
+      "repeticion": null
+    },
+    {
       "id": "pal-2026-f4-monjitas-aguada",
       "torneo": "palermo",
       "fecha": "2026-11-18",
