@@ -12,10 +12,42 @@
       "golesLocal": 17,
       "golesVisitante": 15,
       "ganador": "local",
-      "progresion": [],
+      "progresion": ["3-2", "4-3", "5-4", "8-7", "12-7", "14-9", "15-11", "17-15"],
       "goleadores": [
-        { "nombre": "B. Panelo", "goles": 8, "equipo": "local" }
+        { "nombre": "B. Panelo", "goles": 8, "equipo": "local" },
+        { "nombre": "C. M. Ulloa", "goles": 5, "equipo": "local" },
+        { "nombre": "H. Ulloa", "goles": 3, "equipo": "local" },
+        { "nombre": "T. Panelo", "goles": 1, "equipo": "local" },
+        { "nombre": "Pablo Pieres", "goles": 7, "equipo": "visitante" },
+        { "nombre": "Pablo Mac Donough", "goles": 4, "equipo": "visitante" },
+        { "nombre": "M. Mac Donough (h.)", "goles": 3, "equipo": "visitante" },
+        { "nombre": "P. de Narváez", "goles": 1, "equipo": "visitante" }
       ],
+      "estadisticas": {
+        "fuente": "International Polo Academy (IPA)",
+        "equipos": {
+          "tiros": ["13/26", "11/21"],
+          "penales": ["4/4", "3/6"],
+          "corners": ["0/0", "0/0"],
+          "faltas": [12, 7],
+          "throwins": [17, 17],
+          "tarjetas": [0, 2]
+        },
+        "jugadores": {
+          "local": [
+            { "nombre": "Hilario Ulloa", "goles": 3, "tiros": "3/5", "penales": "0/0", "pases": "14/23", "asistencias": 3, "faltas": 4, "recuperos": 22, "perdidas": 19, "throwins": 3 },
+            { "nombre": "Carlos María Ulloa", "goles": 5, "tiros": "5/8", "penales": "0/0", "pases": "14/21", "asistencias": 1, "faltas": 4, "recuperos": 20, "perdidas": 11, "throwins": 4 },
+            { "nombre": "Benjamín Panelo", "goles": 8, "tiros": "4/6", "penales": "4/4", "pases": "18/35", "asistencias": 2, "faltas": 1, "recuperos": 19, "perdidas": 10, "throwins": 5 },
+            { "nombre": "Tomás Panelo", "goles": 1, "tiros": "1/7", "penales": "0/0", "pases": "27/48", "asistencias": 4, "faltas": 3, "recuperos": 31, "perdidas": 12, "throwins": 5 }
+          ],
+          "visitante": [
+            { "nombre": "Pablo Pieres", "goles": 7, "tiros": "4/6", "penales": "3/6", "pases": "13/18", "asistencias": 0, "faltas": 1, "recuperos": 16, "perdidas": 22, "throwins": 4 },
+            { "nombre": "Paco de Narváez", "goles": 1, "tiros": "1/4", "penales": "0/0", "pases": "12/26", "asistencias": 2, "faltas": 4, "recuperos": 25, "perdidas": 15, "throwins": 6 },
+            { "nombre": "Pablo Mac Donough", "goles": 4, "tiros": "4/8", "penales": "0/0", "pases": "21/37", "asistencias": 1, "faltas": 1, "recuperos": 25, "perdidas": 11, "throwins": 4 },
+            { "nombre": "Matías Mac Donough (h.)", "goles": 3, "tiros": "2/3", "penales": "0/0", "pases": "17/38", "asistencias": 2, "faltas": 1, "recuperos": 22, "perdidas": 15, "throwins": 3 }
+          ]
+        }
+      },
       "nota": "Con 8 goles de Benjamín Panelo, La Hache le quitó el invicto a La Irenita y quedó como único líder de la Zona A, con dos triunfos en dos partidos.",
       "repeticion": null,
       "resumen": null
@@ -31,8 +63,41 @@
       "golesLocal": 25,
       "golesVisitante": 8,
       "ganador": "local",
-      "progresion": [],
-      "goleadores": [],
+      "progresion": ["2-1", "5-1", "8-2", "11-4", "14-4", "20-4", "23-7", "25-8"],
+      "goleadores": [
+        { "nombre": "C. Castagnola", "goles": 11, "equipo": "local" },
+        { "nombre": "A. Cambiaso (n.)", "goles": 6, "equipo": "local" },
+        { "nombre": "B. Castagnola", "goles": 5, "equipo": "local" },
+        { "nombre": "A. Cambiaso (h.)", "goles": 3, "equipo": "local" },
+        { "nombre": "K. Magrini", "goles": 6, "equipo": "visitante" },
+        { "nombre": "F. Llosa", "goles": 1, "equipo": "visitante" },
+        { "nombre": "F. Vercellino", "goles": 1, "equipo": "visitante" }
+      ],
+      "estadisticas": {
+        "fuente": "International Polo Academy (IPA)",
+        "equipos": {
+          "tiros": ["17/35", "7/14"],
+          "penales": ["6/6", "0/1"],
+          "corners": ["0/0", "1/2"],
+          "faltas": [7, 12],
+          "throwins": [20, 14],
+          "tarjetas": [0, 0]
+        },
+        "jugadores": {
+          "local": [
+            { "nombre": "Camilo Castagnola", "goles": 11, "tiros": "7/15", "penales": "4/4", "pases": "15/30", "asistencias": 2, "faltas": 3, "recuperos": 24, "perdidas": 14, "throwins": 3 },
+            { "nombre": "Adolfo Cambiaso (n.)", "goles": 6, "tiros": "4/6", "penales": "2/2", "pases": "30/42", "asistencias": 2, "faltas": 3, "recuperos": 30, "perdidas": 9, "throwins": 6 },
+            { "nombre": "Adolfo Cambiaso (h.)", "goles": 3, "tiros": "2/5", "penales": "0/0", "pases": "25/36", "asistencias": 1, "faltas": 1, "recuperos": 22, "perdidas": 9, "throwins": 6 },
+            { "nombre": "Bartolomé Castagnola (h.)", "goles": 5, "tiros": "4/9", "penales": "0/0", "pases": "23/33", "asistencias": 2, "faltas": 0, "recuperos": 28, "perdidas": 18, "throwins": 5 }
+          ],
+          "visitante": [
+            { "nombre": "Facundo Llosa", "goles": 1, "tiros": "1/4", "penales": "0/0", "pases": "8/18", "asistencias": 0, "faltas": 4, "recuperos": 21, "perdidas": 15, "throwins": 4 },
+            { "nombre": "Kristos Magrini", "goles": 6, "tiros": "6/10", "penales": "0/0", "pases": "5/19", "asistencias": 0, "faltas": 2, "recuperos": 18, "perdidas": 15, "throwins": 3 },
+            { "nombre": "Pedro Zacharias", "goles": 0, "tiros": "0/0", "penales": "0/0", "pases": "10/24", "asistencias": 1, "faltas": 4, "recuperos": 21, "perdidas": 17, "throwins": 2 },
+            { "nombre": "Felipe Vercellino", "goles": 1, "tiros": "0/0", "penales": "0/1", "pases": "27/52", "asistencias": 1, "faltas": 2, "recuperos": 28, "perdidas": 4, "throwins": 5 }
+          ]
+        }
+      },
       "nota": "Debut de La Natividad-La Dolfina en Palermo: 21° triunfo seguido. Segunda derrota de Don Ercole en el torneo.",
       "repeticion": null,
       "resumen": "https://www.youtube.com/watch?v=kKiJtAewlvk"
