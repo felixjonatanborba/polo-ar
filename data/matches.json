@@ -12,10 +12,46 @@
       "golesLocal": 16,
       "golesVisitante": 17,
       "ganador": "visitante",
-      "progresion": [],
-      "goleadores": [],
-      "nota": "En el debut de Ellerstina-Indios Chapaleufú en Palermo, La Zeta Kazak le ganó por un gol y quedó como único líder de la Zona B, con dos triunfos en dos partidos. En Tortugas había perdido 18-10 con Ellerstina.",
-      "repeticion": null
+      "progresion": ["1-2", "6-3", "9-3", "11-6", "13-8", "15-9", "16-12", "16-16", "16-17"],
+      "goleadores": [
+        { "nombre": "F. Pieres", "goles": 5, "equipo": "local" },
+        { "nombre": "A. Heguy", "goles": 5, "equipo": "local" },
+        { "nombre": "G. Pieres (h.)", "goles": 3, "equipo": "local" },
+        { "nombre": "C. Heguy", "goles": 3, "equipo": "local" },
+        { "nombre": "L. Chavanne", "goles": 9, "equipo": "visitante" },
+        { "nombre": "N. Pieres", "goles": 3, "equipo": "visitante" },
+        { "nombre": "G. Caset (h.)", "goles": 2, "equipo": "visitante" },
+        { "nombre": "B. Laulhé", "goles": 2, "equipo": "visitante" },
+        { "nombre": "Gol en contra (F. Pieres)", "goles": 1, "equipo": "visitante" }
+      ],
+      "estadisticas": {
+        "fuente": "International Polo Academy (IPA)",
+        "equipos": {
+          "tiros": ["11/21", "9/24"],
+          "penales": ["4/5", "5/6"],
+          "corners": ["1/1", "1/2"],
+          "faltas": [12, 12],
+          "throwins": [17, 16],
+          "tarjetas": [2, 0]
+        },
+        "jugadores": {
+          "local": [
+            { "nombre": "Facundo Pieres", "goles": 5, "tiros": "1/6", "penales": "3/4", "pases": "11/29", "asistencias": 2, "faltas": 3, "recuperos": 24, "perdidas": 15, "throwins": 2 },
+            { "nombre": "Antonio Heguy", "goles": 5, "tiros": "5/8", "penales": "0/0", "pases": "7/32", "asistencias": 3, "faltas": 2, "recuperos": 32, "perdidas": 23, "throwins": 5 },
+            { "nombre": "Gonzalo Pieres (h.)", "goles": 3, "tiros": "3/4", "penales": "0/0", "pases": "13/22", "asistencias": 0, "faltas": 3, "recuperos": 28, "perdidas": 8, "throwins": 3 },
+            { "nombre": "Cruz Heguy", "goles": 3, "tiros": "2/3", "penales": "1/1", "pases": "19/42", "asistencias": 2, "faltas": 4, "recuperos": 30, "perdidas": 9, "throwins": 7 }
+          ],
+          "visitante": [
+            { "nombre": "Guillermo Caset (h.)", "goles": 2, "tiros": "2/8", "penales": "0/0", "pases": "12/21", "asistencias": 2, "faltas": 5, "recuperos": 21, "perdidas": 16, "throwins": 4 },
+            { "nombre": "Beltrán Laulhé", "goles": 2, "tiros": "2/3", "penales": "0/0", "pases": "8/17", "asistencias": 0, "faltas": 0, "recuperos": 18, "perdidas": 14, "throwins": 3 },
+            { "nombre": "Lorenzo Chavanne", "goles": 9, "tiros": "3/10", "penales": "5/6", "pases": "25/49", "asistencias": 2, "faltas": 4, "recuperos": 40, "perdidas": 22, "throwins": 5 },
+            { "nombre": "Nicolás Pieres", "goles": 3, "tiros": "2/3", "penales": "0/0", "pases": "32/61", "asistencias": 0, "faltas": 3, "recuperos": 40, "perdidas": 14, "throwins": 4 }
+          ]
+        }
+      },
+      "nota": "En el debut de Ellerstina-Indios Chapaleufú en Palermo, La Zeta Kazak le ganó 17-16 en chukker suplementario, con un penal de Lorenzo Chavanne, y quedó como único líder de la Zona B, con dos triunfos en dos partidos. En Tortugas había perdido 18-10 con Ellerstina.",
+      "repeticion": null,
+      "resumen": "https://www.youtube.com/watch?v=mTHEpKGJPJQ"
     },
     {
       "id": "pal-2026-f4-monjitas-aguada",
@@ -28,8 +64,41 @@
       "golesLocal": 20,
       "golesVisitante": 8,
       "ganador": "local",
-      "progresion": [],
-      "goleadores": [],
+      "progresion": ["1-1", "4-1", "6-4", "11-4", "15-5", "16-5", "16-7", "20-8"],
+      "goleadores": [
+        { "nombre": "I. du Plessis", "goles": 8, "equipo": "local" },
+        { "nombre": "R. Bensadón", "goles": 5, "equipo": "local" },
+        { "nombre": "J. M. Nero", "goles": 5, "equipo": "local" },
+        { "nombre": "L. Monteverde (n.)", "goles": 2, "equipo": "local" },
+        { "nombre": "J. Pittaluga", "goles": 7, "equipo": "visitante" },
+        { "nombre": "B. Bayugar", "goles": 1, "equipo": "visitante" }
+      ],
+      "estadisticas": {
+        "fuente": "International Polo Academy (IPA)",
+        "equipos": {
+          "tiros": ["18/34", "5/6"],
+          "penales": ["2/3", "3/7"],
+          "corners": ["0/0", "0/1"],
+          "faltas": [10, 6],
+          "throwins": [20, 10],
+          "tarjetas": [2, 0]
+        },
+        "jugadores": {
+          "local": [
+            { "nombre": "Rufino Bensadón", "goles": 5, "tiros": "3/9", "penales": "2/3", "pases": "12/18", "asistencias": 1, "faltas": 2, "recuperos": 20, "perdidas": 11, "throwins": 5 },
+            { "nombre": "Lucas Monteverde (n.)", "goles": 2, "tiros": "2/6", "penales": "0/0", "pases": "20/37", "asistencias": 5, "faltas": 5, "recuperos": 37, "perdidas": 24, "throwins": 6 },
+            { "nombre": "Juan Martín Nero", "goles": 5, "tiros": "5/8", "penales": "0/0", "pases": "18/46", "asistencias": 0, "faltas": 3, "recuperos": 33, "perdidas": 6, "throwins": 5 },
+            { "nombre": "Ignatius du Plessis", "goles": 8, "tiros": "8/11", "penales": "0/0", "pases": "25/39", "asistencias": 2, "faltas": 0, "recuperos": 24, "perdidas": 10, "throwins": 4 }
+          ],
+          "visitante": [
+            { "nombre": "Bautista Bayugar", "goles": 1, "tiros": "1/1", "penales": "0/0", "pases": "1/8", "asistencias": 0, "faltas": 0, "recuperos": 7, "perdidas": 5, "throwins": 1 },
+            { "nombre": "Alfredo Bigatti", "goles": 0, "tiros": "0/1", "penales": "0/0", "pases": "11/28", "asistencias": 0, "faltas": 0, "recuperos": 18, "perdidas": 11, "throwins": 1 },
+            { "nombre": "Ignacio Laprida", "goles": 0, "tiros": "0/0", "penales": "0/0", "pases": "13/31", "asistencias": 0, "faltas": 3, "recuperos": 31, "perdidas": 21, "throwins": 4 },
+            { "nombre": "Joaquín Pittaluga", "goles": 7, "tiros": "4/4", "penales": "3/7", "pases": "17/37", "asistencias": 0, "faltas": 3, "recuperos": 23, "perdidas": 12, "throwins": 3 },
+            { "nombre": "Santiago Loza", "goles": 0, "tiros": "0/0", "penales": "0/0", "pases": "4/10", "asistencias": 0, "faltas": 0, "recuperos": 15, "perdidas": 11, "throwins": 1 }
+          ]
+        }
+      },
       "nota": "Primera victoria de Las Monjitas en Palermo: había perdido con La Zeta Kazak en su debut.",
       "repeticion": null,
       "resumen": "https://www.youtube.com/watch?v=bE-uhv36rmU"
