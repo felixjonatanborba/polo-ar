@@ -1,5 +1,45 @@
 {
   "_ayuda": "Partidos programados que todavía no se jugaron. Un objeto por partido. torneo: palermo | tortugas | hurlingham. fecha: AAAA-MM-DD. hora: HH:MM en hora de Argentina, o null si no está confirmada. cancha: número o null (se muestra 'a confirmar'). Mientras se juega (desde la hora y durante 2 h 30 min) aparece solo en En vivo. Desaparece de la lista 2 h 30 min después de empezar, o antes si ya está cargado con resultado en matches.json (mismos equipos y fecha). Cuando termine, pasalo a matches.json.",
   "partidos": [
+    {
+      "id": "pal-2026-f5-irenita-ercole",
+      "torneo": "palermo",
+      "fecha": "2026-11-21",
+      "hora": "14:00",
+      "fase": "Zona A · Fecha 5",
+      "local": "la-irenita",
+      "visitante": "don-ercole",
+      "cancha": 2
+    },
+    {
+      "id": "pal-2026-f5-natividad-ensenada",
+      "torneo": "palermo",
+      "fecha": "2026-11-21",
+      "hora": "16:30",
+      "fase": "Zona A · Fecha 5",
+      "local": "la-natividad-la-dolfina",
+      "visitante": "la-ensenada",
+      "cancha": 1
+    },
+    {
+      "id": "pal-2026-f6-ellerstina-aguada",
+      "torneo": "palermo",
+      "fecha": "2026-11-22",
+      "hora": "14:00",
+      "fase": "Zona B · Fecha 6",
+      "local": "ellerstina-indios-chapaleufu",
+      "visitante": "la-aguada",
+      "cancha": 2
+    },
+    {
+      "id": "pal-2026-f6-monjitas-hiper",
+      "torneo": "palermo",
+      "fecha": "2026-11-22",
+      "hora": "16:30",
+      "fase": "Zona B · Fecha 6",
+      "local": "las-monjitas",
+      "visitante": "hiper-polo-club",
+      "cancha": 1
+    }
   ]
 }
