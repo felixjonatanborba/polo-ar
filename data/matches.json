@@ -2,6 +2,55 @@
   "_ayuda": "Un objeto por partido. torneo: palermo | tortugas | hurlingham. fecha: AAAA-MM-DD. fechaAproximada: true si no está confirmada. golesLocal/golesVisitante: null = sin confirmar (se muestra '—'). ganador: 'local' | 'visitante' | null (se usa si no hay goles). progresion: resultado acumulado local-visitante al final de cada chukker. goleadores: {nombre, goles, equipo: 'local' | 'visitante'}. repeticion: link directo a Disney+ o null (usa la página del torneo). resumen: link opcional a un video de YouTube con el resumen del partido.",
   "partidos": [
     {
+      "id": "pal-2026-f5-natividad-ensenada",
+      "torneo": "palermo",
+      "fecha": "2026-11-21",
+      "fechaAproximada": false,
+      "fase": "Zona A · Fecha 5",
+      "local": "la-natividad-la-dolfina",
+      "visitante": "la-ensenada",
+      "golesLocal": 18,
+      "golesVisitante": 10,
+      "ganador": "local",
+      "progresion": ["4-0", "6-1", "11-2", "13-2", "15-4", "17-5", "17-10", "18-10"],
+      "goleadores": [
+        { "nombre": "C. Castagnola", "goles": 8, "equipo": "local" },
+        { "nombre": "A. Cambiaso (n.)", "goles": 6, "equipo": "local" },
+        { "nombre": "B. Castagnola", "goles": 3, "equipo": "local" },
+        { "nombre": "A. Cambiaso (h.)", "goles": 1, "equipo": "local" },
+        { "nombre": "J. del Carril", "goles": 7, "equipo": "visitante" },
+        { "nombre": "D. Cavanagh", "goles": 1, "equipo": "visitante" },
+        { "nombre": "J. Britos", "goles": 1, "equipo": "visitante" },
+        { "nombre": "J. M. Zubía", "goles": 1, "equipo": "visitante" }
+      ],
+      "nota": "22° triunfo seguido de La Natividad-La Dolfina, que ganó la Copa Isdin y quedó más cerca de definir la Zona A.",
+      "repeticion": null
+    },
+    {
+      "id": "pal-2026-f5-irenita-ercole",
+      "torneo": "palermo",
+      "fecha": "2026-11-21",
+      "fechaAproximada": false,
+      "fase": "Zona A · Fecha 5",
+      "local": "la-irenita",
+      "visitante": "don-ercole",
+      "golesLocal": 16,
+      "golesVisitante": 12,
+      "ganador": "local",
+      "progresion": ["2-0", "4-3", "7-4", "10-6", "11-9", "13-11", "15-11", "16-12"],
+      "goleadores": [
+        { "nombre": "Pablo Pieres", "goles": 8, "equipo": "local" },
+        { "nombre": "M. Mac Donough (h.)", "goles": 5, "equipo": "local" },
+        { "nombre": "Pablo Mac Donough", "goles": 3, "equipo": "local" },
+        { "nombre": "F. Llosa", "goles": 6, "equipo": "visitante" },
+        { "nombre": "P. Zacharias", "goles": 3, "equipo": "visitante" },
+        { "nombre": "K. Magrini", "goles": 2, "equipo": "visitante" },
+        { "nombre": "F. Vercellino", "goles": 1, "equipo": "visitante" }
+      ],
+      "nota": "Segundo triunfo de La Irenita, que ganó la Copa Termas de Río Hondo. Pablo Pieres hizo 8 goles y es el goleador del torneo, con 21. Don Ercole sigue sin ganar en la temporada.",
+      "repeticion": null
+    },
+    {
       "id": "pal-2026-f4-ellerstina-zeta",
       "torneo": "palermo",
       "fecha": "2026-11-18",
